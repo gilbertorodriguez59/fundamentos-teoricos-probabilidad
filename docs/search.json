@@ -1,0 +1,532 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentos Teóricos de Introducción a la Probabilidad",
+    "section": "",
+    "text": "Portada\nEste libro desarrolla los fundamentos matemáticos de la probabilidad con énfasis en definiciones, teoremas, demostraciones y construcción rigurosa de modelos.\nLa exposición avanza desde el lenguaje de conjuntos y los axiomas de probabilidad hasta los modelos probabilísticos que se estudiarán en capítulos posteriores.",
+    "crumbs": [
+      "Portada"
+    ]
+  },
+  {
+    "objectID": "bienvenida.html",
+    "href": "bienvenida.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "La teoría de la probabilidad estudia matemáticamente fenómenos en los que intervienen incertidumbre y variación.\nEste libro busca construir los conceptos desde sus fundamentos: conjuntos y eventos, axiomas de probabilidad, independencia, variables aleatorias, esperanza, distribuciones y resultados límite.\nLa intención es que cada fórmula aparezca acompañada de su significado, condiciones de validez y relación con otros resultados.",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "presentacion.html",
+    "href": "presentacion.html",
+    "title": "Presentación",
+    "section": "",
+    "text": "La obra sigue el recorrido de un primer curso universitario de probabilidad: conjuntos, espacios muestrales, eventos, axiomas, probabilidad condicional, Bayes, variables aleatorias, esperanza, distribuciones conjuntas y distribuciones discretas y continuas importantes.\nA diferencia del libro aplicado, aquí se desarrollarán con mayor detalle las definiciones, propiedades y demostraciones, procurando mantener un nivel accesible para estudiantes de ingeniería y ciencias con formación en cálculo.",
+    "crumbs": [
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "introduccion.html",
+    "href": "introduccion.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "La probabilidad transforma la incertidumbre en un objeto matemático susceptible de análisis. Su punto de partida es describir los resultados posibles de un experimento y representar mediante conjuntos los sucesos de interés. A partir de ahí se construye una medida de probabilidad y se estudian sus consecuencias.\nEl desarrollo será progresivo. Primero estableceremos el lenguaje de experimentos, espacios muestrales y eventos; después formularemos los axiomas y sus propiedades; más adelante introduciremos variables aleatorias, funciones de distribución, esperanza, momentos y distribuciones conjuntas.\nEl objetivo no será únicamente aplicar fórmulas, sino comprender por qué funcionan y bajo qué hipótesis pueden utilizarse.",
+    "crumbs": [
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "notacion.html",
+    "href": "notacion.html",
+    "title": "Notación general",
+    "section": "",
+    "text": "\\(\\Omega\\): espacio muestral.\n\\(\\mathcal{F}\\): colección de eventos.\n\\(A,B,C\\): eventos.\n\\(A^c\\): complemento de \\(A\\).\n\\(P\\): medida de probabilidad.\n\\(P(A\\mid B)\\): probabilidad condicional.\n\\(X,Y\\): variables aleatorias.\n\\(F_X\\): función de distribución de \\(X\\).\n\\(E(X)\\): esperanza matemática.\n\\(\\operatorname{Var}(X)\\): varianza.\n\\(\\operatorname{Cov}(X,Y)\\): covarianza.\n\\(\\rho_{XY}\\): coeficiente de correlación.",
+    "crumbs": [
+      "Notación general"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html",
+    "href": "01-incertidumbre-modelos.html",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "",
+    "text": "1.1 Objetivos\nAl finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
+    "href": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.2 Fenómenos deterministas y aleatorios",
+    "text": "1.2 Fenómenos deterministas y aleatorios\nUn fenómeno se denomina determinista cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno aleatorio puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.\nLa aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#experimento-aleatorio",
+    "href": "01-incertidumbre-modelos.html#experimento-aleatorio",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.3 Experimento aleatorio",
+    "text": "1.3 Experimento aleatorio\nUn experimento aleatorio es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.\nMás adelante llamaremos espacio muestral a ese conjunto de resultados posibles.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#regularidad-estadística",
+    "href": "01-incertidumbre-modelos.html#regularidad-estadística",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.4 Regularidad estadística",
+    "text": "1.4 Regularidad estadística\nAunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.\nSi \\(A\\) es un evento y después de \\(n\\) repeticiones ocurre \\(n_A\\) veces, definimos la frecuencia relativa\n\\[\nf_n(A)=\\frac{n_A}{n}.\n\\]\nEl comportamiento de \\(f_n(A)\\) cuando \\(n\\) aumenta será estudiado posteriormente mediante resultados límite.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#modelo-probabilístico",
+    "href": "01-incertidumbre-modelos.html#modelo-probabilístico",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.5 Modelo probabilístico",
+    "text": "1.5 Modelo probabilístico\nUn modelo probabilístico elemental consta de dos componentes:\n\nuna descripción de los resultados posibles;\nuna regla que asigna probabilidades a los eventos.\n\nEn una formulación más avanzada, un espacio de probabilidad se representa mediante la terna\n\\[\n(\\Omega,\\mathcal{F},P),\n\\]\ndonde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una colección adecuada de eventos y \\(P\\) es una medida de probabilidad.\nEn este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer \\(P\\).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
+    "href": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.6 Probabilidad como modelo, no como predicción exacta",
+    "text": "1.6 Probabilidad como modelo, no como predicción exacta\nAsignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.\nPor ejemplo, si una moneda ideal se modela con\n\\[\nP(\\text{cara})=\\frac12,\n\\]\nesto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
+    "href": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.7 Papel de la probabilidad en ingeniería y ciencias",
+    "text": "1.7 Papel de la probabilidad en ingeniería y ciencias\nLos modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.\nLa utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#ideas-clave",
+    "href": "01-incertidumbre-modelos.html#ideas-clave",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.8 Ideas clave",
+    "text": "1.8 Ideas clave\n\nAleatoriedad no significa ausencia de leyes matemáticas.\nUn experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.\nLa probabilidad se construye sobre eventos asociados a un espacio muestral.\nEl modelo probabilístico abstrae los rasgos relevantes del fenómeno real.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#ejercicios",
+    "href": "01-incertidumbre-modelos.html#ejercicios",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.9 Ejercicios",
+    "text": "1.9 Ejercicios\n\nDa dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.\nExplica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.\nDescribe los resultados posibles de lanzar dos monedas.\n¿Por qué \\(P(A)=0.7\\) no significa que el evento \\(A\\) ocurrirá siete veces en cada bloque de diez repeticiones?\nExplica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#referencias-del-capítulo",
+    "href": "01-incertidumbre-modelos.html#referencias-del-capítulo",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.10 Referencias del capítulo",
+    "text": "1.10 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html",
+    "href": "02-espacios-eventos.html",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "",
+    "text": "2.1 Objetivos\nAl finalizar este capítulo, el estudiante podrá:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#objetivos",
+    "href": "02-espacios-eventos.html#objetivos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "",
+    "text": "formular con precisión un espacio muestral;\nrepresentar eventos como subconjuntos del espacio muestral;\ndistinguir puntos muestrales, eventos y familias de eventos;\ndemostrar identidades del álgebra de conjuntos mediante argumentos de pertenencia;\nreconocer particiones y eventos mutuamente excluyentes;\nrelacionar el enfoque elemental de eventos con la terna \\((\\Omega,\\mathcal{F},P)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#lenguaje-de-conjuntos",
+    "href": "02-espacios-eventos.html#lenguaje-de-conjuntos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.2 Lenguaje de conjuntos",
+    "text": "2.2 Lenguaje de conjuntos\nLa teoría de probabilidad utiliza el lenguaje de conjuntos para separar dos niveles:\n\nel resultado individual de un experimento;\nlas afirmaciones acerca de ese resultado.\n\nUn conjunto es una colección bien definida de objetos. Si \\(x\\) es elemento de \\(A\\), escribimos \\(x\\in A\\). La negación se expresa como \\(x\\notin A\\).\n\nInclusión e igualdad\nSean \\(A\\) y \\(B\\) conjuntos. Definimos\n\\[\nA\\subseteq B\n\\quad\\Longleftrightarrow\\quad\n\\forall x\\,(x\\in A\\Rightarrow x\\in B).\n\\]\nLa igualdad queda caracterizada por doble inclusión:\n\\[\nA=B\n\\quad\\Longleftrightarrow\\quad\nA\\subseteq B\\text{ y }B\\subseteq A.\n\\]\nEsta caracterización será nuestra herramienta principal para demostrar identidades entre eventos.\n\n\nConjunto vacío y conjunto potencia\nEl conjunto vacío, \\(\\varnothing\\), no contiene elementos. Es subconjunto de cualquier conjunto.\nEl conjunto potencia de \\(\\Omega\\), denotado por \\(\\mathcal{P}(\\Omega)\\), es la colección de todos sus subconjuntos:\n\\[\n\\mathcal{P}(\\Omega)=\\{A:A\\subseteq\\Omega\\}.\n\\]\nSi \\(\\Omega\\) tiene \\(n\\) elementos, entonces\n\\[\n|\\mathcal{P}(\\Omega)|=2^n.\n\\]\nEn efecto, para formar un subconjunto decidimos, para cada uno de los \\(n\\) elementos, incluirlo o no incluirlo. Existen dos decisiones independientes por elemento, lo que produce \\(2^n\\) subconjuntos.\n\n\nProducto cartesiano\nEl producto cartesiano de \\(A\\) y \\(B\\) es\n\\[\nA\\times B=\\{(a,b):a\\in A,\\ b\\in B\\}.\n\\]\nSi \\(A\\) y \\(B\\) son finitos,\n\\[\n|A\\times B|=|A|\\,|B|.\n\\]\nLos productos cartesianos permiten describir experimentos compuestos. Dos lanzamientos de un dado tienen como espacio muestral\n\\[\n\\{1,2,3,4,5,6\\}\\times\\{1,2,3,4,5,6\\}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#operaciones-con-conjuntos",
+    "href": "02-espacios-eventos.html#operaciones-con-conjuntos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.3 Operaciones con conjuntos",
+    "text": "2.3 Operaciones con conjuntos\nPara \\(A,B\\subseteq\\Omega\\), definimos:\n\\[\nA\\cup B=\\{x\\in\\Omega:x\\in A\\text{ o }x\\in B\\},\n\\]\n\\[\nA\\cap B=\\{x\\in\\Omega:x\\in A\\text{ y }x\\in B\\},\n\\]\n\\[\nA\\setminus B=\\{x\\in\\Omega:x\\in A\\text{ y }x\\notin B\\},\n\\]\n\\[\nA^c=\\Omega\\setminus A.\n\\]\nLa diferencia simétrica es\n\\[\nA\\triangle B=(A\\setminus B)\\cup(B\\setminus A).\n\\]\nTambién puede escribirse como\n\\[\nA\\triangle B=(A\\cup B)\\setminus(A\\cap B).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#propiedades-del-álgebra-de-conjuntos",
+    "href": "02-espacios-eventos.html#propiedades-del-álgebra-de-conjuntos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.4 Propiedades del álgebra de conjuntos",
+    "text": "2.4 Propiedades del álgebra de conjuntos\nPara cualesquiera \\(A,B,C\\subseteq\\Omega\\) se cumplen:\n\nLeyes conmutativas\n\\[\nA\\cup B=B\\cup A,\n\\qquad\nA\\cap B=B\\cap A.\n\\]\n\n\nLeyes asociativas\n\\[\n(A\\cup B)\\cup C=A\\cup(B\\cup C),\n\\]\n\\[\n(A\\cap B)\\cap C=A\\cap(B\\cap C).\n\\]\n\n\nLeyes distributivas\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C),\n\\]\n\\[\nA\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C).\n\\]\n\n\nLeyes de identidad y complemento\n\\[\nA\\cup\\varnothing=A,\n\\qquad\nA\\cap\\Omega=A,\n\\]\n\\[\nA\\cup\\Omega=\\Omega,\n\\qquad\nA\\cap\\varnothing=\\varnothing,\n\\]\n\\[\nA\\cup A^c=\\Omega,\n\\qquad\nA\\cap A^c=\\varnothing,\n\\]\n\\[\n(A^c)^c=A.\n\\]\n\n\nLeyes de De Morgan\n\\[\n(A\\cup B)^c=A^c\\cap B^c,\n\\]\n\\[\n(A\\cap B)^c=A^c\\cup B^c.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#demostraciones-por-pertenencia",
+    "href": "02-espacios-eventos.html#demostraciones-por-pertenencia",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.5 Demostraciones por pertenencia",
+    "text": "2.5 Demostraciones por pertenencia\n\nPrimera ley de De Morgan\nDemostraremos\n\\[\n(A\\cup B)^c=A^c\\cap B^c.\n\\]\nSea \\(x\\in\\Omega\\). Entonces\n\\[\n\\begin{aligned}\nx\\in(A\\cup B)^c\n&\\Longleftrightarrow x\\notin A\\cup B\\\\\n&\\Longleftrightarrow (x\\notin A)\\text{ y }(x\\notin B)\\\\\n&\\Longleftrightarrow (x\\in A^c)\\text{ y }(x\\in B^c)\\\\\n&\\Longleftrightarrow x\\in A^c\\cap B^c.\n\\end{aligned}\n\\]\nComo la equivalencia se cumple para todo \\(x\\in\\Omega\\), los conjuntos son iguales.\n\n\nLey distributiva\nDemostremos\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C).\n\\]\nPara cualquier \\(x\\in\\Omega\\),\n\\[\n\\begin{aligned}\nx\\in A\\cap(B\\cup C)\n&\\Longleftrightarrow x\\in A\\text{ y }(x\\in B\\text{ o }x\\in C)\\\\\n&\\Longleftrightarrow (x\\in A\\text{ y }x\\in B)\n\\text{ o }(x\\in A\\text{ y }x\\in C)\\\\\n&\\Longleftrightarrow x\\in(A\\cap B)\\cup(A\\cap C).\n\\end{aligned}\n\\]\nLa demostración reproduce una ley distributiva de la lógica proposicional. Esta correspondencia entre lógica y conjuntos será constante en probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#experimento-aleatorio-y-espacio-muestral",
+    "href": "02-espacios-eventos.html#experimento-aleatorio-y-espacio-muestral",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.6 Experimento aleatorio y espacio muestral",
+    "text": "2.6 Experimento aleatorio y espacio muestral\nUn experimento aleatorio es un procedimiento cuyo resultado concreto no se conoce antes de realizarlo, aunque el conjunto de resultados posibles pueda especificarse.\nEl espacio muestral \\(\\Omega\\) es el conjunto de todos los resultados posibles que distingue el modelo. Sus elementos \\(\\omega\\in\\Omega\\) reciben el nombre de puntos muestrales.\nLa frase “que distingue el modelo” es importante. Un mismo procedimiento admite diferentes espacios muestrales según la información que se registre.\n\nEjemplo\nAl lanzar un dado y registrar el número de puntos,\n\\[\n\\Omega_1=\\{1,2,3,4,5,6\\}.\n\\]\nSi sólo se registra la paridad,\n\\[\n\\Omega_2=\\{\\text{par},\\text{impar}\\}.\n\\]\nExiste una función \\(g:\\Omega_1\\to\\Omega_2\\) que asigna a cada número su paridad. El segundo modelo es una descripción menos fina del primero.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#clasificación-de-espacios-muestrales",
+    "href": "02-espacios-eventos.html#clasificación-de-espacios-muestrales",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.7 Clasificación de espacios muestrales",
+    "text": "2.7 Clasificación de espacios muestrales\n\nEspacio finito\n\\(\\Omega\\) contiene un número finito de puntos. Por ejemplo, para dos bits transmitidos,\n\\[\n\\Omega=\\{00,01,10,11\\}.\n\\]\n\n\nEspacio infinito numerable\nSus puntos pueden ponerse en correspondencia con un subconjunto de los números naturales. El número de intentos hasta obtener el primer éxito tiene espacio muestral\n\\[\n\\Omega=\\{1,2,3,\\ldots\\}.\n\\]\n\n\nEspacio no numerable\nContiene un continuo de resultados. El tiempo de vida de un dispositivo puede modelarse mediante\n\\[\n\\Omega=[0,\\infty).\n\\]\nLa distinción entre espacios discretos y continuos determinará posteriormente cómo se asignan probabilidades y cómo se definen las variables aleatorias.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#eventos-como-subconjuntos",
+    "href": "02-espacios-eventos.html#eventos-como-subconjuntos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.8 Eventos como subconjuntos",
+    "text": "2.8 Eventos como subconjuntos\nUn evento \\(A\\) es un subconjunto de \\(\\Omega\\). Decimos que \\(A\\) ocurre si el resultado observado \\(\\omega\\) pertenece a \\(A\\).\nEsta definición distingue correctamente:\n\npunto muestral: \\(\\omega\\in\\Omega\\);\nevento elemental: \\(\\{\\omega\\}\\subseteq\\Omega\\);\nevento general: \\(A\\subseteq\\Omega\\).\n\nEl evento seguro es \\(\\Omega\\) y el evento imposible es \\(\\varnothing\\).\n\nEjemplo\nPara \\(\\Omega=\\{1,2,3,4,5,6\\}\\), definamos\n\\[\nA=\\{2,4,6\\},\\qquad B=\\{4,5,6\\}.\n\\]\n\\(A\\) es el evento “resultado par” y \\(B\\) es “resultado mayor que 3”. De aquí,\n\\[\nA\\cap B=\\{4,6\\},\n\\]\n\\[\nA\\cup B=\\{2,4,5,6\\},\n\\]\n\\[\nA^c=\\{1,3,5\\}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#eventos-disjuntos-y-familias-exhaustivas",
+    "href": "02-espacios-eventos.html#eventos-disjuntos-y-familias-exhaustivas",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.9 Eventos disjuntos y familias exhaustivas",
+    "text": "2.9 Eventos disjuntos y familias exhaustivas\nDos eventos \\(A\\) y \\(B\\) son mutuamente excluyentes o disjuntos si\n\\[\nA\\cap B=\\varnothing.\n\\]\nUna familia \\(A_1,\\ldots,A_n\\) es exhaustiva si\n\\[\n\\bigcup_{i=1}^{n}A_i=\\Omega.\n\\]\nLa exhaustividad no implica disjunción. Los eventos pueden cubrir todo \\(\\Omega\\) y superponerse.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#particiones",
+    "href": "02-espacios-eventos.html#particiones",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.10 Particiones",
+    "text": "2.10 Particiones\nUna colección no vacía \\(\\{A_i:i\\in I\\}\\) es una partición de \\(\\Omega\\) si:\n\n\\(A_i\\neq\\varnothing\\) para todo \\(i\\);\n\\(A_i\\cap A_j=\\varnothing\\) cuando \\(i\\neq j\\);\n\\(\\bigcup_{i\\in I}A_i=\\Omega\\).\n\nCada punto muestral pertenece exactamente a un bloque de la partición.\n\nEjemplo\nEn \\(\\Omega=\\{1,2,3,4,5,6\\}\\),\n\\[\nA_1=\\{1,3,5\\},\\qquad A_2=\\{2,4,6\\}\n\\]\nforman una partición. En cambio,\n\\[\nB_1=\\{1,2,3\\},\\qquad B_2=\\{3,4,5,6\\}\n\\]\nson exhaustivos, pero no forman una partición porque \\(B_1\\cap B_2=\\{3\\}\\).\nLas particiones serán esenciales para la regla de probabilidad total y el teorema de Bayes.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#familias-de-eventos",
+    "href": "02-espacios-eventos.html#familias-de-eventos",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.11 Familias de eventos",
+    "text": "2.11 Familias de eventos\nEn un espacio muestral finito suele tomarse como colección de eventos todo el conjunto potencia:\n\\[\n\\mathcal{F}=\\mathcal{P}(\\Omega).\n\\]\nEn espacios infinitos, especialmente no numerables, no siempre se asigna probabilidad a cada subconjunto. Se selecciona una colección \\(\\mathcal{F}\\) que cumpla propiedades de cierre.\n\nDefinición: sigma-álgebra\nUna colección \\(\\mathcal{F}\\subseteq\\mathcal{P}(\\Omega)\\) es una sigma-álgebra si:\n\n\\(\\Omega\\in\\mathcal{F}\\);\nsi \\(A\\in\\mathcal{F}\\), entonces \\(A^c\\in\\mathcal{F}\\);\nsi \\(A_1,A_2,\\ldots\\in\\mathcal{F}\\), entonces \\(\\bigcup_{i=1}^{\\infty}A_i\\in\\mathcal{F}\\).\n\nLos elementos de \\(\\mathcal{F}\\) son los eventos a los que podrá asignarse probabilidad.\nDe estas condiciones se deduce que \\(\\varnothing\\in\\mathcal{F}\\) y que \\(\\mathcal{F}\\) es cerrada bajo intersecciones numerables. En efecto,\n\\[\n\\bigcap_{i=1}^{\\infty}A_i\n=\n\\left(\\bigcup_{i=1}^{\\infty}A_i^c\\right)^c.\n\\]\nPara el curso elemental bastará, en la mayoría de los ejemplos finitos, trabajar con \\(\\mathcal{P}(\\Omega)\\). La sigma-álgebra explica por qué la terna formal es\n\\[\n(\\Omega,\\mathcal{F},P)\n\\]\ny no solamente \\((\\Omega,P)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#ejemplo-integrador",
+    "href": "02-espacios-eventos.html#ejemplo-integrador",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.12 Ejemplo integrador",
+    "text": "2.12 Ejemplo integrador\nSe inspeccionan dos componentes. Cada uno se clasifica como conforme (\\(C\\)), reparable (\\(R\\)) o desecho (\\(D\\)). Como el orden identifica la posición del componente,\n\\[\n\\Omega=\\{CC,CR,CD,RC,RR,RD,DC,DR,DD\\}.\n\\]\nSea\n\\[\nA=\\{\\omega\\in\\Omega:\\text{al menos un componente es }D\\}\n\\]\ny\n\\[\nB=\\{\\omega\\in\\Omega:\\text{ambos componentes tienen la misma clasificación}\\}.\n\\]\nEntonces\n\\[\nA=\\{CD,RD,DC,DR,DD\\},\n\\]\n\\[\nB=\\{CC,RR,DD\\}.\n\\]\nPor tanto,\n\\[\nA\\cap B=\\{DD\\},\n\\]\n\\[\nA\\setminus B=\\{CD,RD,DC,DR\\},\n\\]\n\\[\n(A\\cup B)^c=\\{CR,RC\\}.\n\\]\nLos eventos\n\\[\nC_0=\\{CC,CR,RC,RR\\},\n\\]\n\\[\nC_1=\\{CD,RD,DC,DR\\},\n\\]\n\\[\nC_2=\\{DD\\}\n\\]\nforman una partición de \\(\\Omega\\) de acuerdo con el número de componentes clasificados como desecho.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#proposición-caracterización-de-la-inclusión",
+    "href": "02-espacios-eventos.html#proposición-caracterización-de-la-inclusión",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.13 Proposición: caracterización de la inclusión",
+    "text": "2.13 Proposición: caracterización de la inclusión\nPara \\(A,B\\subseteq\\Omega\\), son equivalentes:\n\n\\(A\\subseteq B\\);\n\\(A\\cap B=A\\);\n\\(A\\cup B=B\\).\n\n\nDemostración\nSupongamos \\(A\\subseteq B\\). Si \\(x\\in A\\cap B\\), entonces \\(x\\in A\\); por tanto, \\(A\\cap B\\subseteq A\\). La inclusión contraria se obtiene porque \\(x\\in A\\) implica \\(x\\in B\\), de modo que \\(x\\in A\\cap B\\). Así, \\(A\\cap B=A\\).\nAhora supongamos \\(A\\cap B=A\\). Si \\(x\\in A\\), entonces \\(x\\in A\\cap B\\), y por ello \\(x\\in B\\). Luego \\(A\\subseteq B\\).\nLa equivalencia entre \\(A\\subseteq B\\) y \\(A\\cup B=B\\) se demuestra de manera análoga. \\(\\square\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#errores-conceptuales-frecuentes",
+    "href": "02-espacios-eventos.html#errores-conceptuales-frecuentes",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.14 Errores conceptuales frecuentes",
+    "text": "2.14 Errores conceptuales frecuentes\n\nEscribir \\(\\omega\\subseteq\\Omega\\) cuando \\(\\omega\\) es un punto muestral; debe escribirse \\(\\omega\\in\\Omega\\).\nConfundir \\(\\varnothing\\) con \\(\\{\\varnothing\\}\\). El primero no tiene elementos; el segundo contiene un elemento.\nAfirmar que eventos disjuntos son independientes. La independencia requiere una definición probabilística posterior.\nCalcular \\(A^c\\) sin especificar el espacio muestral.\nOmitir resultados en experimentos por etapas o tratar pares ordenados como si el orden no importara.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#ideas-clave",
+    "href": "02-espacios-eventos.html#ideas-clave",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.15 Ideas clave",
+    "text": "2.15 Ideas clave\n\nEl espacio muestral reúne los resultados que distingue el modelo.\nLos eventos son subconjuntos, no resultados individuales.\nEl álgebra de eventos hereda las leyes del álgebra de conjuntos.\nLas identidades se demuestran rigurosamente mediante pertenencia o doble inclusión.\nUna partición divide \\(\\Omega\\) en bloques no vacíos, disjuntos y exhaustivos.\nLa sigma-álgebra \\(\\mathcal{F}\\) especifica qué subconjuntos se consideran eventos medibles.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#ejercicios",
+    "href": "02-espacios-eventos.html#ejercicios",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.16 Ejercicios",
+    "text": "2.16 Ejercicios\n\nConceptos y operaciones\n\nSea \\(\\Omega=\\{1,2,\\ldots,12\\}\\), \\(A\\) el conjunto de múltiplos de 2 y \\(B\\) el conjunto de múltiplos de 3. Obtén \\(A\\cap B\\), \\(A\\cup B\\), \\(A^c\\), \\(B^c\\) y \\(A\\triangle B\\).\nCalcula \\(\\mathcal{P}(\\{a,b,c\\})\\) y verifica que contiene \\(2^3\\) elementos.\nConstruye el espacio muestral de tres lanzamientos de una moneda mediante un producto cartesiano.\nDa un ejemplo de una familia exhaustiva que no sea una partición.\n\n\n\nDemostraciones\n\nDemuestra la segunda ley de De Morgan por pertenencia.\nDemuestra \\(A\\setminus(B\\cup C)=(A\\setminus B)\\cap(A\\setminus C)\\).\nDemuestra \\(A\\triangle B=(A\\cup B)\\setminus(A\\cap B)\\).\nPrueba que \\(A\\subseteq B\\) implica \\(B^c\\subseteq A^c\\).\nDemuestra que una partición finita \\(A_1,\\ldots,A_n\\) satisface que cada \\(\\omega\\in\\Omega\\) pertenece a un único \\(A_i\\).\n\n\n\nModelación\n\nUn experimento registra el estado de tres interruptores, cada uno encendido o apagado. Define \\(\\Omega\\) y los eventos “exactamente dos están encendidos” y “el primero está apagado”.\nSe mide el tiempo hasta la primera falla de un sistema. Propón un espacio muestral continuo y tres eventos expresados mediante intervalos.\nSe extraen dos piezas sin reemplazo de un lote con piezas identificadas. Explica cuándo el orden debe formar parte del punto muestral.\n\n\n\nProfundización\n\nSea \\(\\Omega=\\{1,2,3,4\\}\\). Encuentra una sigma-álgebra que contenga \\(\\{1,2\\}\\) pero que no sea \\(\\mathcal{P}(\\Omega)\\).\nComprueba que \\(\\{\\varnothing,\\Omega\\}\\) y \\(\\mathcal{P}(\\Omega)\\) siempre son sigma-álgebras.\nSi \\(\\mathcal{F}\\) es una sigma-álgebra y \\(A,B\\in\\mathcal{F}\\), demuestra que \\(A\\setminus B\\in\\mathcal{F}\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#referencias-del-capítulo",
+    "href": "02-espacios-eventos.html#referencias-del-capítulo",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.17 Referencias del capítulo",
+    "text": "2.17 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html",
+    "href": "03-conteo-probabilidad.html",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "",
+    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante será capaz de formular y demostrar reglas elementales de conteo, distinguir entre procesos ordenados y no ordenados, obtener fórmulas para permutaciones, arreglos y combinaciones, y utilizar estas herramientas para determinar cardinalidades de espacios muestrales finitos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#cardinalidad-de-conjuntos-finitos",
+    "href": "03-conteo-probabilidad.html#cardinalidad-de-conjuntos-finitos",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.2 Cardinalidad de conjuntos finitos",
+    "text": "3.2 Cardinalidad de conjuntos finitos\nSi \\(A\\) es un conjunto finito, denotamos por\n\\[\n|A|\n\\]\nel número de elementos de \\(A\\).\nLas técnicas de conteo buscan determinar cardinalidades sin necesidad de enumerar explícitamente cada elemento.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#principio-aditivo",
+    "href": "03-conteo-probabilidad.html#principio-aditivo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.3 Principio aditivo",
+    "text": "3.3 Principio aditivo\nSean \\(A_1,A_2,\\ldots,A_k\\) conjuntos finitos y mutuamente disjuntos. Entonces\n\\[\n\\left|\\bigcup_{i=1}^k A_i\\right|\n=\\sum_{i=1}^k |A_i|.\n\\]\n\nDemostración\nComo los conjuntos son disjuntos, ningún elemento pertenece simultáneamente a dos de ellos. Por tanto, al sumar sus cardinalidades cada elemento de la unión se cuenta exactamente una vez.\nEl requisito de disjunción es esencial. Si dos conjuntos se superponen, la suma simple cuenta varias veces los elementos comunes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#principio-multiplicativo",
+    "href": "03-conteo-probabilidad.html#principio-multiplicativo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.4 Principio multiplicativo",
+    "text": "3.4 Principio multiplicativo\nSean \\(A_1,A_2,\\ldots,A_k\\) conjuntos finitos. El número de elementos del producto cartesiano\n\\[\nA_1\\times A_2\\times\\cdots\\times A_k\n\\]\nes\n\\[\n|A_1||A_2|\\cdots|A_k|.\n\\]\n\nDemostración\nCada elemento del producto cartesiano es una \\(k\\)-tupla\n\\[\n(a_1,a_2,\\ldots,a_k),\n\\]\ncon \\(a_i\\in A_i\\). Para cada elección de \\(a_1\\) existen \\(|A_2|\\) posibilidades para \\(a_2\\), y así sucesivamente. La aplicación sucesiva del principio multiplicativo produce el resultado.\nEste principio proporciona la formulación matemática de los diagramas de árbol y de los experimentos por etapas.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#secuencias-con-repetición",
+    "href": "03-conteo-probabilidad.html#secuencias-con-repetición",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.5 Secuencias con repetición",
+    "text": "3.5 Secuencias con repetición\nSea un conjunto de \\(n\\) símbolos. El número de secuencias ordenadas de longitud \\(r\\) que pueden formarse permitiendo repetición es\n\\[\nn^r.\n\\]\nEn efecto, el espacio de secuencias es el producto cartesiano\n\\[\nA^r=A\\times A\\times\\cdots\\times A,\n\\]\ny por el principio multiplicativo\n\\[\n|A^r|=|A|^r=n^r.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#factorial",
+    "href": "03-conteo-probabilidad.html#factorial",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.6 Factorial",
+    "text": "3.6 Factorial\nPara \\(n\\in\\mathbb{N}\\),\n\\[\nn!=n(n-1)\\cdots2\\cdot1,\n\\]\ncon el convenio\n\\[\n0!=1.\n\\]\nEl factorial aparece al contar biyecciones y ordenamientos de conjuntos finitos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#permutaciones-de-n-objetos-distintos",
+    "href": "03-conteo-probabilidad.html#permutaciones-de-n-objetos-distintos",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.7 Permutaciones de \\(n\\) objetos distintos",
+    "text": "3.7 Permutaciones de \\(n\\) objetos distintos\nUna permutación de un conjunto de \\(n\\) elementos es una ordenación de todos sus elementos.\n\nTeorema\nEl número de permutaciones de \\(n\\) objetos distintos es\n\\[\nn!.\n\\]\n\n\nDemostración\nLa primera posición puede ocuparse de \\(n\\) maneras. Una vez elegida, la segunda dispone de \\(n-1\\) posibilidades; la tercera, de \\(n-2\\), y así sucesivamente. Por el principio multiplicativo,\n\\[\nn(n-1)(n-2)\\cdots2\\cdot1=n!.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#arreglos-de-r-objetos-tomados-de-n",
+    "href": "03-conteo-probabilidad.html#arreglos-de-r-objetos-tomados-de-n",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.8 Arreglos de \\(r\\) objetos tomados de \\(n\\)",
+    "text": "3.8 Arreglos de \\(r\\) objetos tomados de \\(n\\)\nUn arreglo sin repetición de longitud \\(r\\) es una secuencia ordenada formada por \\(r\\) elementos distintos elegidos de un conjunto de \\(n\\) elementos.\n\nTeorema\nEl número de arreglos es\n\\[\nP(n,r)=\\frac{n!}{(n-r)!},\n\\qquad 0\\le r\\le n.\n\\]\n\n\nDemostración\nExisten \\(n\\) opciones para la primera posición, \\(n-1\\) para la segunda y, finalmente, \\(n-r+1\\) para la posición \\(r\\). Por tanto,\n\\[\nP(n,r)=n(n-1)\\cdots(n-r+1)\n=\\frac{n!}{(n-r)!}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#combinaciones",
+    "href": "03-conteo-probabilidad.html#combinaciones",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.9 Combinaciones",
+    "text": "3.9 Combinaciones\nUna combinación de tamaño \\(r\\) es un subconjunto de \\(r\\) elementos de un conjunto de \\(n\\) elementos.\n\nTeorema\nEl número de combinaciones de \\(n\\) elementos tomados de \\(r\\) en \\(r\\) es\n\\[\n\\binom{n}{r}=\\frac{n!}{r!(n-r)!}.\n\\]\n\n\nDemostración\nPrimero contamos arreglos de longitud \\(r\\):\n\\[\nP(n,r)=\\frac{n!}{(n-r)!}.\n\\]\nCada subconjunto de \\(r\\) elementos produce exactamente \\(r!\\) ordenamientos. Por tanto, al dividir entre \\(r!\\) obtenemos\n\\[\n\\binom{n}{r}\n=\\frac{P(n,r)}{r!}\n=\\frac{n!}{r!(n-r)!}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#simetría-de-los-coeficientes-binomiales",
+    "href": "03-conteo-probabilidad.html#simetría-de-los-coeficientes-binomiales",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.10 Simetría de los coeficientes binomiales",
+    "text": "3.10 Simetría de los coeficientes binomiales\nPara \\(0\\le r\\le n\\),\n\\[\n\\binom{n}{r}=\\binom{n}{n-r}.\n\\]\n\nInterpretación combinatoria\nElegir los \\(r\\) elementos que pertenecen a un subconjunto equivale a elegir los \\(n-r\\) elementos que quedan fuera. Ambas decisiones determinan exactamente el mismo subconjunto.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#identidad-de-pascal",
+    "href": "03-conteo-probabilidad.html#identidad-de-pascal",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.11 Identidad de Pascal",
+    "text": "3.11 Identidad de Pascal\nPara \\(1\\le r\\le n-1\\),\n\\[\n\\binom{n}{r}\n=\n\\binom{n-1}{r-1}\n+\n\\binom{n-1}{r}.\n\\]\n\nDemostración combinatoria\nFijemos un elemento particular \\(x\\) de un conjunto de \\(n\\) elementos. Todo subconjunto de tamaño \\(r\\) pertenece exactamente a una de dos clases:\n\ncontiene a \\(x\\);\nno contiene a \\(x\\).\n\nSi contiene a \\(x\\), faltan por elegir \\(r-1\\) elementos de los \\(n-1\\) restantes, lo que puede hacerse de\n\\[\n\\binom{n-1}{r-1}\n\\]\nformas. Si no contiene a \\(x\\), deben elegirse los \\(r\\) elementos entre los \\(n-1\\) restantes, lo que puede hacerse de\n\\[\n\\binom{n-1}{r}\n\\]\nformas. Como las dos clases son disjuntas, el principio aditivo completa la demostración.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#permutaciones-con-repetición",
+    "href": "03-conteo-probabilidad.html#permutaciones-con-repetición",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.12 Permutaciones con repetición",
+    "text": "3.12 Permutaciones con repetición\nSupongamos que se tienen \\(n\\) objetos, de los cuales \\(n_1\\) son indistinguibles de un primer tipo, \\(n_2\\) de un segundo tipo, …, \\(n_k\\) de un último tipo, con\n\\[\nn_1+n_2+\\cdots+n_k=n.\n\\]\nEl número de ordenamientos distintos es\n\\[\n\\frac{n!}{n_1!n_2!\\cdots n_k!}.\n\\]\n\nJustificación\nSi todos los objetos fueran distintos existirían \\(n!\\) ordenamientos. Sin embargo, permutar entre sí los \\(n_i\\) objetos indistinguibles de cada clase no produce un nuevo ordenamiento. Por ello se divide entre\n\\[\nn_1!n_2!\\cdots n_k!.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#coeficiente-multinomial",
+    "href": "03-conteo-probabilidad.html#coeficiente-multinomial",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.13 Coeficiente multinomial",
+    "text": "3.13 Coeficiente multinomial\nUna generalización natural del coeficiente binomial es\n\\[\n\\binom{n}{n_1,n_2,\\ldots,n_k}\n=\n\\frac{n!}{n_1!n_2!\\cdots n_k!},\n\\]\ncon\n\\[\nn_1+n_2+\\cdots+n_k=n.\n\\]\nEste coeficiente cuenta el número de maneras de dividir \\(n\\) objetos distintos en \\(k\\) grupos etiquetados de tamaños \\(n_1,n_2,\\ldots,n_k\\).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ejemplo-palabras-binarias",
+    "href": "03-conteo-probabilidad.html#ejemplo-palabras-binarias",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.14 Ejemplo: palabras binarias",
+    "text": "3.14 Ejemplo: palabras binarias\nConsideremos cadenas de longitud 8 formadas por ceros y unos.\nEl número total de cadenas es\n\\[\n2^8=256.\n\\]\nEl número de cadenas con exactamente tres unos es\n\\[\n\\binom{8}{3}=56,\n\\]\nporque basta elegir las tres posiciones ocupadas por unos.\nEsta interpretación será útil posteriormente al estudiar la distribución binomial.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ejemplo-selección-de-componentes",
+    "href": "03-conteo-probabilidad.html#ejemplo-selección-de-componentes",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.15 Ejemplo: selección de componentes",
+    "text": "3.15 Ejemplo: selección de componentes\nDe 12 componentes se seleccionan 3.\nSi la selección es un subconjunto sin orden,\n\\[\n\\binom{12}{3}=220.\n\\]\nSi las tres posiciones representan pruebas diferentes y el orden importa,\n\\[\nP(12,3)=\\frac{12!}{9!}=1320.\n\\]\nPor tanto, el mismo conjunto físico de objetos puede inducir distintos problemas combinatorios según la definición del resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#relación-con-espacios-muestrales",
+    "href": "03-conteo-probabilidad.html#relación-con-espacios-muestrales",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.16 Relación con espacios muestrales",
+    "text": "3.16 Relación con espacios muestrales\nLas técnicas de conteo permiten calcular cardinalidades como\n\\[\n|S|\n\\]\ny\n\\[\n|A|,\n\\]\nsin enumerar explícitamente los resultados. En el capítulo siguiente, al introducir formalmente la probabilidad en espacios finitos equiprobables, estas cardinalidades permitirán expresar\n\\[\nP(A)=\\frac{|A|}{|S|}.\n\\]\nPor ahora, lo importante es separar dos cuestiones:\n\ncuántos resultados existen;\nqué probabilidad se asignará a esos resultados.\n\nEl conteo responde la primera pregunta, no la segunda.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ideas-clave",
+    "href": "03-conteo-probabilidad.html#ideas-clave",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.17 Ideas clave",
+    "text": "3.17 Ideas clave\n\nLa cardinalidad mide el tamaño de un conjunto finito.\nEl principio aditivo se aplica a alternativas disjuntas.\nEl principio multiplicativo se aplica a elecciones sucesivas.\nLas permutaciones ordenan todos los objetos.\nLos arreglos seleccionan y ordenan una parte de los objetos.\nLas combinaciones seleccionan sin considerar el orden.\nLos coeficientes binomiales satisfacen identidades con interpretaciones combinatorias.\nLas técnicas de conteo preparan el cálculo de probabilidades en espacios finitos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ejercicios",
+    "href": "03-conteo-probabilidad.html#ejercicios",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.18 Ejercicios",
+    "text": "3.18 Ejercicios\n\nDemuestra el principio multiplicativo para tres conjuntos finitos utilizando productos cartesianos.\nCalcula el número de cadenas de longitud 6 formadas por cuatro símbolos cuando se permite repetición.\n¿Cuántas permutaciones existen de 9 objetos distintos?\n¿Cuántos arreglos de longitud 4 pueden formarse a partir de 10 objetos distintos?\nDemuestra algebraicamente la identidad \\(\\binom{n}{r}=\\binom{n}{n-r}\\).\nDemuestra la identidad de Pascal mediante manipulación algebraica de factoriales.\n¿Cuántas cadenas binarias de longitud 12 contienen exactamente cinco unos?\nObtén el número de permutaciones distintas de las letras de la palabra PROBABILIDAD.\nExplica por qué el conteo de comités utiliza combinaciones mientras que la asignación de cargos utiliza arreglos.\n★ Demuestra que\n\n\\[\n\\sum_{r=0}^n \\binom{n}{r}=2^n\n\\]\ninterpretando ambos lados como el número de subconjuntos de un conjunto de \\(n\\) elementos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#referencias-del-capítulo",
+    "href": "03-conteo-probabilidad.html#referencias-del-capítulo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.19 Referencias del capítulo",
+    "text": "3.19 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "Devore, Jay L. 2016. Probability and Statistics for Engineering and\nthe Sciences. 9th ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and\nStatistics for Engineers. 9th ed. Pearson.\n\n\nMontgomery, Douglas C., and George C. Runger. 2018. Applied\nStatistics and Probability for Engineers. 7th ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.\n2012. Probabilidad y Estadística Para Ingeniería y Ciencias.\n9th ed. Pearson.",
+    "crumbs": [
+      "Referencias"
+    ]
+  }
+]
