@@ -1,0 +1,5 @@
+# Portada {.unnumbered}
+
+Este libro desarrolla los fundamentos matemáticos de la probabilidad con énfasis en definiciones, teoremas, demostraciones y construcción rigurosa de modelos.
+
+La exposición avanza desde el lenguaje de conjuntos y los axiomas de probabilidad hasta los modelos probabilísticos que se estudiarán en capítulos posteriores.

@@ -1,5 +1,7 @@
 # Fundamentos Teóricos de Introducción a la Probabilidad
 
-Repositorio **estable** del libro de Jesús Gilberto Rodríguez Escobedo.
+Repositorio estable del libro **Fundamentos Teóricos de Introducción a la Probabilidad: conceptos, teoremas, demostraciones y modelos probabilísticos**.
 
-La edición estable se publicará aquí únicamente después de revisar y validar los capítulos desarrollados en `fundamentos-teoricos-probabilidad-dev`.
+Autor: Jesús Gilberto Rodríguez Escobedo.
+
+Esta edición contiene los capítulos revisados y aprobados provenientes del repositorio de desarrollo.

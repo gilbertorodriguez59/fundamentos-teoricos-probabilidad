@@ -1,0 +1,348 @@
+# Técnicas de conteo y enumeración
+
+## Objetivos
+
+Al finalizar este capítulo, el estudiante será capaz de formular y demostrar reglas elementales de conteo, distinguir entre procesos ordenados y no ordenados, obtener fórmulas para permutaciones, arreglos y combinaciones, y utilizar estas herramientas para determinar cardinalidades de espacios muestrales finitos.
+
+## Cardinalidad de conjuntos finitos
+
+Si $A$ es un conjunto finito, denotamos por
+
+$$
+|A|
+$$
+
+el número de elementos de $A$.
+
+Las técnicas de conteo buscan determinar cardinalidades sin necesidad de enumerar explícitamente cada elemento.
+
+## Principio aditivo
+
+Sean $A_1,A_2,\ldots,A_k$ conjuntos finitos y mutuamente disjuntos. Entonces
+
+$$
+\left|\bigcup_{i=1}^k A_i\right|
+=\sum_{i=1}^k |A_i|.
+$$
+
+### Demostración
+
+Como los conjuntos son disjuntos, ningún elemento pertenece simultáneamente a dos de ellos. Por tanto, al sumar sus cardinalidades cada elemento de la unión se cuenta exactamente una vez.
+
+El requisito de disjunción es esencial. Si dos conjuntos se superponen, la suma simple cuenta varias veces los elementos comunes.
+
+## Principio multiplicativo
+
+Sean $A_1,A_2,\ldots,A_k$ conjuntos finitos. El número de elementos del producto cartesiano
+
+$$
+A_1\times A_2\times\cdots\times A_k
+$$
+
+es
+
+$$
+|A_1||A_2|\cdots|A_k|.
+$$
+
+### Demostración
+
+Cada elemento del producto cartesiano es una $k$-tupla
+
+$$
+(a_1,a_2,\ldots,a_k),
+$$
+
+con $a_i\in A_i$. Para cada elección de $a_1$ existen $|A_2|$ posibilidades para $a_2$, y así sucesivamente. La aplicación sucesiva del principio multiplicativo produce el resultado.
+
+Este principio proporciona la formulación matemática de los diagramas de árbol y de los experimentos por etapas.
+
+## Secuencias con repetición
+
+Sea un conjunto de $n$ símbolos. El número de secuencias ordenadas de longitud $r$ que pueden formarse permitiendo repetición es
+
+$$
+n^r.
+$$
+
+En efecto, el espacio de secuencias es el producto cartesiano
+
+$$
+A^r=A\times A\times\cdots\times A,
+$$
+
+y por el principio multiplicativo
+
+$$
+|A^r|=|A|^r=n^r.
+$$
+
+## Factorial
+
+Para $n\in\mathbb{N}$,
+
+$$
+n!=n(n-1)\cdots2\cdot1,
+$$
+
+con el convenio
+
+$$
+0!=1.
+$$
+
+El factorial aparece al contar biyecciones y ordenamientos de conjuntos finitos.
+
+## Permutaciones de $n$ objetos distintos
+
+Una permutación de un conjunto de $n$ elementos es una ordenación de todos sus elementos.
+
+### Teorema
+
+El número de permutaciones de $n$ objetos distintos es
+
+$$
+n!.
+$$
+
+### Demostración
+
+La primera posición puede ocuparse de $n$ maneras. Una vez elegida, la segunda dispone de $n-1$ posibilidades; la tercera, de $n-2$, y así sucesivamente. Por el principio multiplicativo,
+
+$$
+n(n-1)(n-2)\cdots2\cdot1=n!.
+$$
+
+## Arreglos de $r$ objetos tomados de $n$
+
+Un arreglo sin repetición de longitud $r$ es una secuencia ordenada formada por $r$ elementos distintos elegidos de un conjunto de $n$ elementos.
+
+### Teorema
+
+El número de arreglos es
+
+$$
+P(n,r)=\frac{n!}{(n-r)!},
+\qquad 0\le r\le n.
+$$
+
+### Demostración
+
+Existen $n$ opciones para la primera posición, $n-1$ para la segunda y, finalmente, $n-r+1$ para la posición $r$. Por tanto,
+
+$$
+P(n,r)=n(n-1)\cdots(n-r+1)
+=\frac{n!}{(n-r)!}.
+$$
+
+## Combinaciones
+
+Una combinación de tamaño $r$ es un subconjunto de $r$ elementos de un conjunto de $n$ elementos.
+
+### Teorema
+
+El número de combinaciones de $n$ elementos tomados de $r$ en $r$ es
+
+$$
+\binom{n}{r}=\frac{n!}{r!(n-r)!}.
+$$
+
+### Demostración
+
+Primero contamos arreglos de longitud $r$:
+
+$$
+P(n,r)=\frac{n!}{(n-r)!}.
+$$
+
+Cada subconjunto de $r$ elementos produce exactamente $r!$ ordenamientos. Por tanto, al dividir entre $r!$ obtenemos
+
+$$
+\binom{n}{r}
+=\frac{P(n,r)}{r!}
+=\frac{n!}{r!(n-r)!}.
+$$
+
+## Simetría de los coeficientes binomiales
+
+Para $0\le r\le n$,
+
+$$
+\binom{n}{r}=\binom{n}{n-r}.
+$$
+
+### Interpretación combinatoria
+
+Elegir los $r$ elementos que pertenecen a un subconjunto equivale a elegir los $n-r$ elementos que quedan fuera. Ambas decisiones determinan exactamente el mismo subconjunto.
+
+## Identidad de Pascal
+
+Para $1\le r\le n-1$,
+
+$$
+\binom{n}{r}
+=
+\binom{n-1}{r-1}
++
+\binom{n-1}{r}.
+$$
+
+### Demostración combinatoria
+
+Fijemos un elemento particular $x$ de un conjunto de $n$ elementos. Todo subconjunto de tamaño $r$ pertenece exactamente a una de dos clases:
+
+1. contiene a $x$;
+2. no contiene a $x$.
+
+Si contiene a $x$, faltan por elegir $r-1$ elementos de los $n-1$ restantes, lo que puede hacerse de
+
+$$
+\binom{n-1}{r-1}
+$$
+
+formas. Si no contiene a $x$, deben elegirse los $r$ elementos entre los $n-1$ restantes, lo que puede hacerse de
+
+$$
+\binom{n-1}{r}
+$$
+
+formas. Como las dos clases son disjuntas, el principio aditivo completa la demostración.
+
+## Permutaciones con repetición
+
+Supongamos que se tienen $n$ objetos, de los cuales $n_1$ son indistinguibles de un primer tipo, $n_2$ de un segundo tipo, ..., $n_k$ de un último tipo, con
+
+$$
+n_1+n_2+\cdots+n_k=n.
+$$
+
+El número de ordenamientos distintos es
+
+$$
+\frac{n!}{n_1!n_2!\cdots n_k!}.
+$$
+
+### Justificación
+
+Si todos los objetos fueran distintos existirían $n!$ ordenamientos. Sin embargo, permutar entre sí los $n_i$ objetos indistinguibles de cada clase no produce un nuevo ordenamiento. Por ello se divide entre
+
+$$
+n_1!n_2!\cdots n_k!.
+$$
+
+## Coeficiente multinomial
+
+Una generalización natural del coeficiente binomial es
+
+$$
+\binom{n}{n_1,n_2,\ldots,n_k}
+=
+\frac{n!}{n_1!n_2!\cdots n_k!},
+$$
+
+con
+
+$$
+n_1+n_2+\cdots+n_k=n.
+$$
+
+Este coeficiente cuenta el número de maneras de dividir $n$ objetos distintos en $k$ grupos etiquetados de tamaños $n_1,n_2,\ldots,n_k$.
+
+## Ejemplo: palabras binarias
+
+Consideremos cadenas de longitud 8 formadas por ceros y unos.
+
+El número total de cadenas es
+
+$$
+2^8=256.
+$$
+
+El número de cadenas con exactamente tres unos es
+
+$$
+\binom{8}{3}=56,
+$$
+
+porque basta elegir las tres posiciones ocupadas por unos.
+
+Esta interpretación será útil posteriormente al estudiar la distribución binomial.
+
+## Ejemplo: selección de componentes
+
+De 12 componentes se seleccionan 3.
+
+Si la selección es un subconjunto sin orden,
+
+$$
+\binom{12}{3}=220.
+$$
+
+Si las tres posiciones representan pruebas diferentes y el orden importa,
+
+$$
+P(12,3)=\frac{12!}{9!}=1320.
+$$
+
+Por tanto, el mismo conjunto físico de objetos puede inducir distintos problemas combinatorios según la definición del resultado.
+
+## Relación con espacios muestrales
+
+Las técnicas de conteo permiten calcular cardinalidades como
+
+$$
+|S|
+$$
+
+y
+
+$$
+|A|,
+$$
+
+sin enumerar explícitamente los resultados. En el capítulo siguiente, al introducir formalmente la probabilidad en espacios finitos equiprobables, estas cardinalidades permitirán expresar
+
+$$
+P(A)=\frac{|A|}{|S|}.
+$$
+
+Por ahora, lo importante es separar dos cuestiones:
+
+1. cuántos resultados existen;
+2. qué probabilidad se asignará a esos resultados.
+
+El conteo responde la primera pregunta, no la segunda.
+
+## Ideas clave
+
+- La cardinalidad mide el tamaño de un conjunto finito.
+- El principio aditivo se aplica a alternativas disjuntas.
+- El principio multiplicativo se aplica a elecciones sucesivas.
+- Las permutaciones ordenan todos los objetos.
+- Los arreglos seleccionan y ordenan una parte de los objetos.
+- Las combinaciones seleccionan sin considerar el orden.
+- Los coeficientes binomiales satisfacen identidades con interpretaciones combinatorias.
+- Las técnicas de conteo preparan el cálculo de probabilidades en espacios finitos.
+
+## Ejercicios
+
+1. Demuestra el principio multiplicativo para tres conjuntos finitos utilizando productos cartesianos.
+2. Calcula el número de cadenas de longitud 6 formadas por cuatro símbolos cuando se permite repetición.
+3. ¿Cuántas permutaciones existen de 9 objetos distintos?
+4. ¿Cuántos arreglos de longitud 4 pueden formarse a partir de 10 objetos distintos?
+5. Demuestra algebraicamente la identidad $\binom{n}{r}=\binom{n}{n-r}$.
+6. Demuestra la identidad de Pascal mediante manipulación algebraica de factoriales.
+7. ¿Cuántas cadenas binarias de longitud 12 contienen exactamente cinco unos?
+8. Obtén el número de permutaciones distintas de las letras de la palabra PROBABILIDAD.
+9. Explica por qué el conteo de comités utiliza combinaciones mientras que la asignación de cargos utiliza arreglos.
+10. ★ Demuestra que
+
+$$
+\sum_{r=0}^n \binom{n}{r}=2^n
+$$
+
+interpretando ambos lados como el número de subconjuntos de un conjunto de $n$ elementos.
+
+## Referencias del capítulo
+
+El desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
