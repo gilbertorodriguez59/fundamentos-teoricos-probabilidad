@@ -27,11 +27,11 @@ jobs:
         run: |
           rsync -a --delete \
             --exclude '.git/' \
-            --exclude '.github/workflows/' \
+            --exclude '.github/' \
             /tmp/dev/ ./
           grep -rlZ 'fundamentos-teoricos-probabilidad-dev' . \
             --exclude-dir=.git \
-            --exclude-dir=.github/workflows \
+            --exclude-dir=.github \
             | xargs -0 -r sed -i 's/fundamentos-teoricos-probabilidad-dev/fundamentos-teoricos-probabilidad/g'
 
       - name: Verificar capítulos antes de publicar
