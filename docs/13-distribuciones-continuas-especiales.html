@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>13&nbsp; Distribuciones continuas especiales I: uniforme, exponencial y normal – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./14-gamma-weibull-beta.html" rel="next">
+<link href="./12-hipergeometrica-poisson.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-distribuciones-continuas-especiales.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -269,7 +269,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-distribuciones-continuas-especiales.html" class="sidebar-item-text sidebar-link">
+  <a href="./13-distribuciones-continuas-especiales.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></span></a>
   </div>
 </li>
@@ -313,16 +313,21 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">13.1</span> Objetivos</a></li>
+  <li><a href="#distribución-uniforme" id="toc-distribución-uniforme" class="nav-link" data-scroll-target="#distribución-uniforme"><span class="header-section-number">13.2</span> Distribución uniforme</a></li>
+  <li><a href="#transformación-afín-de-una-uniforme" id="toc-transformación-afín-de-una-uniforme" class="nav-link" data-scroll-target="#transformación-afín-de-una-uniforme"><span class="header-section-number">13.3</span> Transformación afín de una uniforme</a></li>
+  <li><a href="#distribución-exponencial" id="toc-distribución-exponencial" class="nav-link" data-scroll-target="#distribución-exponencial"><span class="header-section-number">13.4</span> Distribución exponencial</a></li>
+  <li><a href="#propiedad-sin-memoria" id="toc-propiedad-sin-memoria" class="nav-link" data-scroll-target="#propiedad-sin-memoria"><span class="header-section-number">13.5</span> Propiedad sin memoria</a></li>
+  <li><a href="#distribución-normal" id="toc-distribución-normal" class="nav-link" data-scroll-target="#distribución-normal"><span class="header-section-number">13.6</span> Distribución normal</a></li>
+  <li><a href="#normal-estándar" id="toc-normal-estándar" class="nav-link" data-scroll-target="#normal-estándar"><span class="header-section-number">13.7</span> Normal estándar</a></li>
+  <li><a href="#estandarización" id="toc-estandarización" class="nav-link" data-scroll-target="#estandarización"><span class="header-section-number">13.8</span> Estandarización</a></li>
+  <li><a href="#media-y-varianza-de-la-normal" id="toc-media-y-varianza-de-la-normal" class="nav-link" data-scroll-target="#media-y-varianza-de-la-normal"><span class="header-section-number">13.9</span> Media y varianza de la normal</a></li>
+  <li><a href="#transformaciones-afines" id="toc-transformaciones-afines" class="nav-link" data-scroll-target="#transformaciones-afines"><span class="header-section-number">13.10</span> Transformaciones afines</a></li>
+  <li><a href="#cuantiles" id="toc-cuantiles" class="nav-link" data-scroll-target="#cuantiles"><span class="header-section-number">13.11</span> Cuantiles</a></li>
+  <li><a href="#simetría-de-la-cdf-normal" id="toc-simetría-de-la-cdf-normal" class="nav-link" data-scroll-target="#simetría-de-la-cdf-normal"><span class="header-section-number">13.12</span> Simetría de la CDF normal</a></li>
+  <li><a href="#comparación-estructural" id="toc-comparación-estructural" class="nav-link" data-scroll-target="#comparación-estructural"><span class="header-section-number">13.13</span> Comparación estructural</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">13.14</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">13.15</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +336,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></h1>
 </div>
 
 
@@ -348,79 +353,297 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="objetivos" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">13.1</span> Objetivos</h2>
+<p>En este capítulo se establecen formalmente las distribuciones uniforme, exponencial y normal, sus densidades, funciones de distribución, momentos y propiedades estructurales fundamentales.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="distribución-uniforme" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="distribución-uniforme"><span class="header-section-number">13.2</span> Distribución uniforme</h2>
+<p>Sea <span class="math inline">\(a&lt;b\)</span>. Decimos que</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+X\sim U(a,b)
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
+<p>si su densidad es</p>
+<p><span class="math display">\[
+f_X(x)=\frac{1}{b-a}\mathbf 1_{[a,b]}(x).
+\]</span></p>
+<p>La normalización es inmediata:</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty}f_X(x)\,dx
+=\int_a^b\frac{1}{b-a}\,dx=1.
+\]</span></p>
+<p>La función de distribución es</p>
+<p><span class="math display">\[
+F_X(x)=
+\begin{cases}
+0, &amp; x&lt;a,\\
+\dfrac{x-a}{b-a}, &amp; a\le x\le b,\\
+1, &amp; x&gt;b.
+\end{cases}
+\]</span></p>
+<p>Por integración directa,</p>
+<p><span class="math display">\[
+E[X]=\frac{a+b}{2}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+E[X^2]=\frac{a^2+ab+b^2}{3}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=E[X^2]-E[X]^2
+=\frac{(b-a)^2}{12}.
+\]</span></p>
 </section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
+<section id="transformación-afín-de-una-uniforme" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="transformación-afín-de-una-uniforme"><span class="header-section-number">13.3</span> Transformación afín de una uniforme</h2>
+<p>Si <span class="math inline">\(X\sim U(a,b)\)</span> y</p>
+<p><span class="math display">\[
+Y=\frac{X-a}{b-a},
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+Y\sim U(0,1).
+\]</span></p>
+<p>Este resultado permite reducir propiedades de cualquier uniforme al caso estándar.</p>
+</section>
+<section id="distribución-exponencial" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="distribución-exponencial"><span class="header-section-number">13.4</span> Distribución exponencial</h2>
+<p>Sea <span class="math inline">\(\lambda&gt;0\)</span>. Decimos que</p>
+<p><span class="math display">\[
+X\sim\operatorname{Exp}(\lambda)
+\]</span></p>
+<p>si</p>
+<p><span class="math display">\[
+f_X(x)=\lambda e^{-\lambda x}\mathbf 1_{[0,\infty)}(x).
+\]</span></p>
+<p>La función de distribución es</p>
+<p><span class="math display">\[
+F_X(x)=
+\begin{cases}
+0, &amp; x&lt;0,\\
+1-e^{-\lambda x}, &amp; x\ge0.
+\end{cases}
+\]</span></p>
+<p>Su función de supervivencia es</p>
+<p><span class="math display">\[
+\overline F_X(x)=P(X&gt;x)=e^{-\lambda x},\qquad x\ge0.
+\]</span></p>
+<p>Mediante integración por partes,</p>
+<p><span class="math display">\[
+E[X]=\frac1\lambda
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+E[X^2]=\frac{2}{\lambda^2}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=\frac1{\lambda^2}.
+\]</span></p>
+</section>
+<section id="propiedad-sin-memoria" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="propiedad-sin-memoria"><span class="header-section-number">13.5</span> Propiedad sin memoria</h2>
+<p>Para <span class="math inline">\(s,t\ge0\)</span>,</p>
+<p><span class="math display">\[
+P(X&gt;s+t\mid X&gt;s)
+=\frac{P(X&gt;s+t)}{P(X&gt;s)}
+=\frac{e^{-\lambda(s+t)}}{e^{-\lambda s}}
+=e^{-\lambda t}.
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+\boxed{P(X&gt;s+t\mid X&gt;s)=P(X&gt;t)}.
+\]</span></p>
+<p>La distribución exponencial es la única distribución continua no degenerada sobre <span class="math inline">\([0,\infty)\)</span> con esta propiedad.</p>
+</section>
+<section id="distribución-normal" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="distribución-normal"><span class="header-section-number">13.6</span> Distribución normal</h2>
+<p>Decimos que</p>
+<p><span class="math display">\[
+X\sim N(\mu,\sigma^2),\qquad \sigma&gt;0,
+\]</span></p>
+<p>si su densidad es</p>
+<p><span class="math display">\[
+f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}
+\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
+\]</span></p>
+<p>La normalización se reduce a la integral gaussiana</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty}e^{-z^2/2}\,dz=\sqrt{2\pi}.
+\]</span></p>
+<p>La densidad es simétrica respecto de <span class="math inline">\(\mu\)</span>.</p>
+</section>
+<section id="normal-estándar" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="normal-estándar"><span class="header-section-number">13.7</span> Normal estándar</h2>
+<p>La variable</p>
+<p><span class="math display">\[
+Z\sim N(0,1)
+\]</span></p>
+<p>se denomina normal estándar y tiene densidad</p>
+<p><span class="math display">\[
+\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-z^2/2}.
+\]</span></p>
+<p>Su función de distribución se denota por</p>
+<p><span class="math display">\[
+\Phi(z)=\int_{-\infty}^z\phi(t)\,dt.
+\]</span></p>
+<p>No existe una expresión elemental cerrada para <span class="math inline">\(\Phi\)</span>.</p>
+</section>
+<section id="estandarización" class="level2" data-number="13.8">
+<h2 data-number="13.8" class="anchored" data-anchor-id="estandarización"><span class="header-section-number">13.8</span> Estandarización</h2>
+<p>Si</p>
+<p><span class="math display">\[
+X\sim N(\mu,\sigma^2),
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+Z=\frac{X-\mu}{\sigma}
+\]</span></p>
+<p>satisface</p>
+<p><span class="math display">\[
+Z\sim N(0,1).
+\]</span></p>
+<p>En consecuencia,</p>
+<p><span class="math display">\[
+P(X\le x)=\Phi\left(\frac{x-\mu}{\sigma}\right).
+\]</span></p>
+</section>
+<section id="media-y-varianza-de-la-normal" class="level2" data-number="13.9">
+<h2 data-number="13.9" class="anchored" data-anchor-id="media-y-varianza-de-la-normal"><span class="header-section-number">13.9</span> Media y varianza de la normal</h2>
+<p>Por simetría,</p>
+<p><span class="math display">\[
+E[Z]=0.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+E[Z^2]=1.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\operatorname{Var}(Z)=1.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+X=\mu+\sigma Z,
+\]</span></p>
+<p>se obtiene</p>
+<p><span class="math display">\[
+E[X]=\mu
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=\sigma^2.
+\]</span></p>
+</section>
+<section id="transformaciones-afines" class="level2" data-number="13.10">
+<h2 data-number="13.10" class="anchored" data-anchor-id="transformaciones-afines"><span class="header-section-number">13.10</span> Transformaciones afines</h2>
+<p>Si</p>
+<p><span class="math display">\[
+X\sim N(\mu,\sigma^2)
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+Y=aX+b,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+Y\sim N(a\mu+b,a^2\sigma^2).
+\]</span></p>
+<p>Este resultado se obtiene mediante cambio de variable o mediante funciones generadoras.</p>
+</section>
+<section id="cuantiles" class="level2" data-number="13.11">
+<h2 data-number="13.11" class="anchored" data-anchor-id="cuantiles"><span class="header-section-number">13.11</span> Cuantiles</h2>
+<p>Para <span class="math inline">\(0&lt;p&lt;1\)</span>, el cuantil <span class="math inline">\(z_p\)</span> de la normal estándar se define mediante</p>
+<p><span class="math display">\[
+\Phi(z_p)=p.
+\]</span></p>
+<p>Para una normal general,</p>
+<p><span class="math display">\[
+x_p=\mu+\sigma z_p.
+\]</span></p>
+</section>
+<section id="simetría-de-la-cdf-normal" class="level2" data-number="13.12">
+<h2 data-number="13.12" class="anchored" data-anchor-id="simetría-de-la-cdf-normal"><span class="header-section-number">13.12</span> Simetría de la CDF normal</h2>
+<p>La simetría de <span class="math inline">\(\phi\)</span> implica</p>
+<p><span class="math display">\[
+\Phi(-z)=1-\Phi(z).
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+P(|Z|\le z)=2\Phi(z)-1,
+\]</span></p>
+<p>para <span class="math inline">\(z\ge0\)</span>.</p>
+</section>
+<section id="comparación-estructural" class="level2" data-number="13.13">
+<h2 data-number="13.13" class="anchored" data-anchor-id="comparación-estructural"><span class="header-section-number">13.13</span> Comparación estructural</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribución</th>
+<th>Soporte</th>
+<th>Parámetros</th>
+<th>Media</th>
+<th>Varianza</th>
+<th>Propiedad destacada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Uniforme</td>
+<td><span class="math inline">\([a,b]\)</span></td>
+<td><span class="math inline">\(a,b\)</span></td>
+<td><span class="math inline">\((a+b)/2\)</span></td>
+<td><span class="math inline">\((b-a)^2/12\)</span></td>
+<td>densidad constante</td>
+</tr>
+<tr class="even">
+<td>Exponencial</td>
+<td><span class="math inline">\([0,\infty)\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(1/\lambda\)</span></td>
+<td><span class="math inline">\(1/\lambda^2\)</span></td>
+<td>sin memoria</td>
+</tr>
+<tr class="odd">
+<td>Normal</td>
+<td><span class="math inline">\(\mathbb R\)</span></td>
+<td><span class="math inline">\(\mu,\sigma^2\)</span></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td>cierre afín</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejercicios" class="level2" data-number="13.14">
+<h2 data-number="13.14" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">13.14</span> Ejercicios</h2>
 <ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
-<p><span class="math display">\[
-(\Omega,\mathcal{F},P),
-\]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
-<p><span class="math display">\[
-P(\text{cara})=\frac12,
-\]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
-</section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
-</section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
-<ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
-</ul>
-</section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
-<ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
+<li>Demuestra la expresión de <span class="math inline">\(E[X]\)</span> para <span class="math inline">\(X\sim U(a,b)\)</span>.</li>
+<li>Deduce <span class="math inline">\(\operatorname{Var}(X)\)</span> para la distribución uniforme.</li>
+<li>Demuestra que <span class="math inline">\((X-a)/(b-a)\sim U(0,1)\)</span>.</li>
+<li>Deriva <span class="math inline">\(F_X\)</span> para <span class="math inline">\(X\sim\operatorname{Exp}(\lambda)\)</span>.</li>
+<li>Demuestra la propiedad sin memoria de la exponencial.</li>
+<li>Calcula <span class="math inline">\(E[X^2]\)</span> para una exponencial mediante integración por partes.</li>
+<li>Prueba que la densidad normal es simétrica respecto de <span class="math inline">\(\mu\)</span>.</li>
+<li>Demuestra que la estandarización de una normal produce una normal estándar.</li>
+<li>Deduce <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> a partir de <span class="math inline">\(X=\mu+\sigma Z\)</span>.</li>
+<li>Demuestra que <span class="math inline">\(\Phi(-z)=1-\Phi(z)\)</span>.</li>
+<li>Obtén la relación entre cuantiles de <span class="math inline">\(N(\mu,\sigma^2)\)</span> y los cuantiles de <span class="math inline">\(N(0,1)\)</span>.</li>
+<li><strong>Reto ★.</strong> Demuestra mediante cambio de variable que <span class="math inline">\(aX+b\)</span> es normal cuando <span class="math inline">\(X\)</span> es normal.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="13.15">
+<h2 data-number="13.15" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">13.15</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de las distribuciones uniforme, exponencial y normal sigue tratamientos estándar de teoría de probabilidad en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -842,13 +1065,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./12-hipergeometrica-poisson.html" class="pagination-link" aria-label="Distribuciones discretas especiales II: hipergeométrica y Poisson">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./14-gamma-weibull-beta.html" class="pagination-link" aria-label="Distribuciones continuas especiales II: Gamma, Weibull y Beta">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales II: Gamma, Weibull y Beta</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

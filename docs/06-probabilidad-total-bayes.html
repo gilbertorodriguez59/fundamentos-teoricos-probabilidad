@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>6&nbsp; Particiones, probabilidad total y teorema de Bayes – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./07-variable-aleatoria-cdf.html" rel="next">
+<link href="./05-condicional-independencia.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-probabilidad-total-bayes.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -227,7 +227,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-probabilidad-total-bayes.html" class="sidebar-item-text sidebar-link">
+  <a href="./06-probabilidad-total-bayes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></span></a>
   </div>
 </li>
@@ -313,16 +313,36 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">6.1</span> Objetivos</a></li>
+  <li><a href="#particiones-del-espacio-muestral" id="toc-particiones-del-espacio-muestral" class="nav-link" data-scroll-target="#particiones-del-espacio-muestral"><span class="header-section-number">6.2</span> Particiones del espacio muestral</a>
+  <ul class="collapse">
+  <li><a href="#propiedad-fundamental" id="toc-propiedad-fundamental" class="nav-link" data-scroll-target="#propiedad-fundamental">Propiedad fundamental</a></li>
+  </ul></li>
+  <li><a href="#ley-de-la-probabilidad-total" id="toc-ley-de-la-probabilidad-total" class="nav-link" data-scroll-target="#ley-de-la-probabilidad-total"><span class="header-section-number">6.3</span> Ley de la probabilidad total</a>
+  <ul class="collapse">
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
+  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
+  </ul></li>
+  <li><a href="#caso-binario" id="toc-caso-binario" class="nav-link" data-scroll-target="#caso-binario"><span class="header-section-number">6.4</span> Caso binario</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes"><span class="header-section-number">6.5</span> Teorema de Bayes</a>
+  <ul class="collapse">
+  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
+  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
+  </ul></li>
+  <li><a href="#forma-proporcional" id="toc-forma-proporcional" class="nav-link" data-scroll-target="#forma-proporcional"><span class="header-section-number">6.6</span> Forma proporcional</a></li>
+  <li><a href="#normalización-de-las-probabilidades-posteriores" id="toc-normalización-de-las-probabilidades-posteriores" class="nav-link" data-scroll-target="#normalización-de-las-probabilidades-posteriores"><span class="header-section-number">6.7</span> Normalización de las probabilidades posteriores</a>
+  <ul class="collapse">
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  </ul></li>
+  <li><a href="#odds-y-forma-de-bayes-para-dos-hipótesis" id="toc-odds-y-forma-de-bayes-para-dos-hipótesis" class="nav-link" data-scroll-target="#odds-y-forma-de-bayes-para-dos-hipótesis"><span class="header-section-number">6.8</span> Odds y forma de Bayes para dos hipótesis</a></li>
+  <li><a href="#ejemplo-algebraico" id="toc-ejemplo-algebraico" class="nav-link" data-scroll-target="#ejemplo-algebraico"><span class="header-section-number">6.9</span> Ejemplo algebraico</a></li>
+  <li><a href="#particiones-numerables" id="toc-particiones-numerables" class="nav-link" data-scroll-target="#particiones-numerables"><span class="header-section-number">6.10</span> Particiones numerables</a></li>
+  <li><a href="#actualización-secuencial" id="toc-actualización-secuencial" class="nav-link" data-scroll-target="#actualización-secuencial"><span class="header-section-number">6.11</span> Actualización secuencial</a></li>
+  <li><a href="#evidencia-condicionalmente-independiente" id="toc-evidencia-condicionalmente-independiente" class="nav-link" data-scroll-target="#evidencia-condicionalmente-independiente"><span class="header-section-number">6.12</span> Evidencia condicionalmente independiente</a></li>
+  <li><a href="#tasa-base-y-posterior" id="toc-tasa-base-y-posterior" class="nav-link" data-scroll-target="#tasa-base-y-posterior"><span class="header-section-number">6.13</span> Tasa base y posterior</a></li>
+  <li><a href="#relación-con-la-probabilidad-condicional" id="toc-relación-con-la-probabilidad-condicional" class="nav-link" data-scroll-target="#relación-con-la-probabilidad-condicional"><span class="header-section-number">6.14</span> Relación con la probabilidad condicional</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">6.15</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">6.16</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +351,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></h1>
 </div>
 
 
@@ -348,79 +368,288 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="objetivos" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">6.1</span> Objetivos</h2>
+<p>En este capítulo se formalizan las particiones del espacio muestral, la ley de la probabilidad total y el teorema de Bayes. Se estudian sus demostraciones, su interpretación y sus consecuencias algebraicas.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="particiones-del-espacio-muestral" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="particiones-del-espacio-muestral"><span class="header-section-number">6.2</span> Particiones del espacio muestral</h2>
+<p>Una familia finita de eventos</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+\{B_1,\ldots,B_k\}\subseteq\mathcal F
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
-</section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
-<ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
+<p>es una <strong>partición</strong> de <span class="math inline">\(\Omega\)</span> si</p>
 <p><span class="math display">\[
-(\Omega,\mathcal{F},P),
+B_i\cap B_j=\varnothing\quad(i\neq j),
 \]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
+<p>y</p>
 <p><span class="math display">\[
-P(\text{cara})=\frac12,
+\bigcup_{i=1}^{k}B_i=\Omega.
 \]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
+<p>Si además <span class="math inline">\(P(B_i)&gt;0\)</span> para todo <span class="math inline">\(i\)</span>, entonces cada <span class="math inline">\(B_i\)</span> puede utilizarse como evento condicionante.</p>
+<section id="propiedad-fundamental" class="level3">
+<h3 class="anchored" data-anchor-id="propiedad-fundamental">Propiedad fundamental</h3>
+<p>Para cualquier evento <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+A=A\cap\Omega
+=A\cap\left(\bigcup_{i=1}^{k}B_i\right)
+=\bigcup_{i=1}^{k}(A\cap B_i).
+\]</span></p>
+<p>Las intersecciones <span class="math inline">\(A\cap B_i\)</span> son mutuamente excluyentes.</p>
 </section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
 </section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
+<section id="ley-de-la-probabilidad-total" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="ley-de-la-probabilidad-total"><span class="header-section-number">6.3</span> Ley de la probabilidad total</h2>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Sea <span class="math inline">\(B_1,\ldots,B_k\)</span> una partición de <span class="math inline">\(\Omega\)</span> con <span class="math inline">\(P(B_i)&gt;0\)</span>. Entonces para todo evento <span class="math inline">\(A\)</span>,</p>
+<p><span class="math display">\[
+\boxed{
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i)
+}.
+\]</span></p>
+</section>
+<section id="demostración" class="level3">
+<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
+<p>Como</p>
+<p><span class="math display">\[
+A=\bigcup_{i=1}^{k}(A\cap B_i)
+\]</span></p>
+<p>y las uniones son disjuntas,</p>
+<p><span class="math display">\[
+P(A)=\sum_{i=1}^{k}P(A\cap B_i).
+\]</span></p>
+<p>Por la definición de probabilidad condicional,</p>
+<p><span class="math display">\[
+P(A\cap B_i)=P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>Sustituyendo,</p>
+<p><span class="math display">\[
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>Queda demostrado.</p>
+</section>
+</section>
+<section id="caso-binario" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="caso-binario"><span class="header-section-number">6.4</span> Caso binario</h2>
+<p>Si <span class="math inline">\(B\)</span> y <span class="math inline">\(B^c\)</span> forman una partición y <span class="math inline">\(0&lt;P(B)&lt;1\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{
+P(A)=P(B)P(A\mid B)+P(B^c)P(A\mid B^c)
+}.
+\]</span></p>
+<p>Esta forma aparece constantemente en confiabilidad, diagnóstico y clasificación.</p>
+</section>
+<section id="teorema-de-bayes" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="teorema-de-bayes"><span class="header-section-number">6.5</span> Teorema de Bayes</h2>
+<section id="teorema-1" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
+<p>Sea <span class="math inline">\(B_1,\ldots,B_k\)</span> una partición con <span class="math inline">\(P(B_i)&gt;0\)</span> y sea <span class="math inline">\(A\)</span> un evento con <span class="math inline">\(P(A)&gt;0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\boxed{
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{k}P(B_j)P(A\mid B_j)}
+}.
+\]</span></p>
+</section>
+<section id="demostración-1" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
+<p>Por definición,</p>
+<p><span class="math display">\[
+P(B_i\mid A)=\frac{P(B_i\cap A)}{P(A)}.
+\]</span></p>
+<p>La regla del producto da</p>
+<p><span class="math display">\[
+P(B_i\cap A)=P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>La ley de la probabilidad total produce</p>
+<p><span class="math display">\[
+P(A)=\sum_{j=1}^{k}P(B_j)P(A\mid B_j).
+\]</span></p>
+<p>Al sustituir ambas expresiones se obtiene la fórmula de Bayes.</p>
+</section>
+</section>
+<section id="forma-proporcional" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="forma-proporcional"><span class="header-section-number">6.6</span> Forma proporcional</h2>
+<p>La identidad anterior puede escribirse como</p>
+<p><span class="math display">\[
+P(B_i\mid A)
+\propto
+P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>El denominador</p>
+<p><span class="math display">\[
+P(A)
+\]</span></p>
+<p>actúa como constante de normalización común a todas las hipótesis <span class="math inline">\(B_i\)</span>.</p>
+<p>Esta forma permite separar tres componentes conceptuales:</p>
 <ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
+<li><span class="math inline">\(P(B_i)\)</span>: probabilidad previa;</li>
+<li><span class="math inline">\(P(A\mid B_i)\)</span>: verosimilitud de la evidencia bajo <span class="math inline">\(B_i\)</span>;</li>
+<li><span class="math inline">\(P(B_i\mid A)\)</span>: probabilidad posterior.</li>
 </ul>
 </section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
+<section id="normalización-de-las-probabilidades-posteriores" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="normalización-de-las-probabilidades-posteriores"><span class="header-section-number">6.7</span> Normalización de las probabilidades posteriores</h2>
+<p>Como los <span class="math inline">\(B_i\)</span> forman una partición,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{k}P(B_i\mid A)=1.
+\]</span></p>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Usando Bayes,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{k}P(B_i\mid A)
+=
+\frac{\sum_{i=1}^{k}P(B_i)P(A\mid B_i)}{P(A)}.
+\]</span></p>
+<p>El numerador es precisamente <span class="math inline">\(P(A)\)</span> por la ley de probabilidad total, de modo que la razón vale 1.</p>
+</section>
+</section>
+<section id="odds-y-forma-de-bayes-para-dos-hipótesis" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="odds-y-forma-de-bayes-para-dos-hipótesis"><span class="header-section-number">6.8</span> Odds y forma de Bayes para dos hipótesis</h2>
+<p>Para una hipótesis <span class="math inline">\(H\)</span> y su complemento <span class="math inline">\(H^c\)</span>, Bayes puede expresarse mediante <strong>odds</strong>.</p>
+<p>Las odds previas son</p>
+<p><span class="math display">\[
+\frac{P(H)}{P(H^c)}.
+\]</span></p>
+<p>Después de observar evidencia <span class="math inline">\(E\)</span>,</p>
+<p><span class="math display">\[
+\frac{P(H\mid E)}{P(H^c\mid E)}
+=
+\frac{P(H)}{P(H^c)}
+\cdot
+\frac{P(E\mid H)}{P(E\mid H^c)}.
+\]</span></p>
+<p>La razón</p>
+<p><span class="math display">\[
+\frac{P(E\mid H)}{P(E\mid H^c)}
+\]</span></p>
+<p>se denomina <strong>razón de verosimilitudes</strong>.</p>
+<p>Esta formulación muestra que Bayes actualiza multiplicativamente las odds previas.</p>
+</section>
+<section id="ejemplo-algebraico" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="ejemplo-algebraico"><span class="header-section-number">6.9</span> Ejemplo algebraico</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+P(H)=0.10,
+\]</span></p>
+<p><span class="math display">\[
+P(E\mid H)=0.80,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+P(E\mid H^c)=0.20.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+P(E)=0.10(0.80)+0.90(0.20)=0.26.
+\]</span></p>
+<p>Por Bayes,</p>
+<p><span class="math display">\[
+P(H\mid E)=\frac{0.10(0.80)}{0.26}=\frac{4}{13}\approx0.3077.
+\]</span></p>
+<p>En términos de odds:</p>
+<p><span class="math display">\[
+\frac{P(H)}{P(H^c)}=\frac{1}{9},
+\]</span></p>
+<p>mientras que la razón de verosimilitudes es</p>
+<p><span class="math display">\[
+\frac{0.80}{0.20}=4.
+\]</span></p>
+<p>Por tanto, las odds posteriores son</p>
+<p><span class="math display">\[
+\frac{4}{9}.
+\]</span></p>
+<p>De ahí se recupera</p>
+<p><span class="math display">\[
+P(H\mid E)=\frac{4/9}{1+4/9}=\frac{4}{13}.
+\]</span></p>
+</section>
+<section id="particiones-numerables" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="particiones-numerables"><span class="header-section-number">6.10</span> Particiones numerables</h2>
+<p>La formulación se extiende a una partición numerable <span class="math inline">\(B_1,B_2,\ldots\)</span> siempre que las sumas estén bien definidas.</p>
+<p>Si</p>
+<p><span class="math display">\[
+\Omega=\bigcup_{i=1}^{\infty}B_i
+\]</span></p>
+<p>con eventos dos a dos disjuntos y <span class="math inline">\(P(B_i)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+P(A)=\sum_{i=1}^{\infty}P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>Y, si <span class="math inline">\(P(A)&gt;0\)</span>,</p>
+<p><span class="math display">\[
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{\infty}P(B_j)P(A\mid B_j)}.
+\]</span></p>
+</section>
+<section id="actualización-secuencial" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="actualización-secuencial"><span class="header-section-number">6.11</span> Actualización secuencial</h2>
+<p>Sean <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> dos evidencias. Entonces</p>
+<p><span class="math display">\[
+P(H\mid E_1,E_2)
+=
+\frac{P(H\mid E_1)P(E_2\mid H,E_1)}
+{P(E_2\mid E_1)}.
+\]</span></p>
+<p>La distribución posterior tras observar <span class="math inline">\(E_1\)</span> puede utilizarse como distribución previa en la actualización con <span class="math inline">\(E_2\)</span>.</p>
+<p>Esto formaliza la idea de aprendizaje secuencial.</p>
+</section>
+<section id="evidencia-condicionalmente-independiente" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="evidencia-condicionalmente-independiente"><span class="header-section-number">6.12</span> Evidencia condicionalmente independiente</h2>
+<p>Si <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> son condicionalmente independientes dado <span class="math inline">\(H\)</span>, entonces</p>
+<p><span class="math display">\[
+P(E_1\cap E_2\mid H)
+=P(E_1\mid H)P(E_2\mid H).
+\]</span></p>
+<p>Bajo esta hipótesis, la actualización con múltiples evidencias se simplifica.</p>
+<p>No debe confundirse independencia ordinaria con independencia condicional.</p>
+</section>
+<section id="tasa-base-y-posterior" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="tasa-base-y-posterior"><span class="header-section-number">6.13</span> Tasa base y posterior</h2>
+<p>El teorema de Bayes muestra que una gran verosimilitud no garantiza una gran probabilidad posterior. El valor de <span class="math inline">\(P(B_i)\)</span> influye necesariamente en la respuesta.</p>
+<p>Por ello, en problemas de clasificación o diagnóstico, ignorar las probabilidades previas puede producir inferencias seriamente engañosas.</p>
+</section>
+<section id="relación-con-la-probabilidad-condicional" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="relación-con-la-probabilidad-condicional"><span class="header-section-number">6.14</span> Relación con la probabilidad condicional</h2>
+<p>Bayes no introduce una nueva noción de probabilidad. Es una consecuencia algebraica directa de</p>
+<p><span class="math display">\[
+P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B).
+\]</span></p>
+<p>Siempre que <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(P(B)&gt;0\)</span>,</p>
+<p><span class="math display">\[
+P(B\mid A)
+=\frac{P(B)P(A\mid B)}{P(A)}.
+\]</span></p>
+<p>La ley de la probabilidad total aparece cuando el denominador <span class="math inline">\(P(A)\)</span> debe expresarse en términos de una partición.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">6.15</span> Ejercicios</h2>
 <ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
+<li>Demuestra la ley de la probabilidad total para una partición de cuatro eventos.</li>
+<li>Prueba el teorema de Bayes a partir de la definición de probabilidad condicional y la ley de probabilidad total.</li>
+<li>Si <span class="math inline">\(B_1,B_2,B_3\)</span> forman una partición con probabilidades <span class="math inline">\(0.2,0.5,0.3\)</span> y <span class="math inline">\(P(A\mid B_i)=0.1,0.4,0.7\)</span>, calcula <span class="math inline">\(P(A)\)</span> y las tres probabilidades posteriores.</li>
+<li>Demuestra que las probabilidades posteriores obtenidas en el ejercicio anterior suman 1.</li>
+<li>Deriva la forma de Bayes en términos de odds para dos hipótesis complementarias.</li>
+<li>Sea <span class="math inline">\(P(H)=p\)</span>, <span class="math inline">\(P(E\mid H)=s\)</span> y <span class="math inline">\(P(E\mid H^c)=f\)</span>. Demuestra que</li>
+</ol>
+<p><span class="math display">\[
+P(H\mid E)=\frac{ps}{ps+(1-p)f}.
+\]</span></p>
+<ol start="7" type="1">
+<li>Analiza el límite de la expresión anterior cuando <span class="math inline">\(p\to0\)</span> y cuando <span class="math inline">\(p\to1\)</span>.</li>
+<li>Si <span class="math inline">\(P(E\mid H)=P(E\mid H^c)\)</span>, demuestra que <span class="math inline">\(P(H\mid E)=P(H)\)</span>.</li>
+<li>Si una evidencia tiene razón de verosimilitudes igual a 1, interpreta su efecto sobre las odds previas.</li>
+<li><strong>Reto ★.</strong> Supón que <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> son condicionalmente independientes dado <span class="math inline">\(H\)</span> y dado <span class="math inline">\(H^c\)</span>. Deriva una expresión para las odds posteriores tras observar ambas evidencias.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">6.16</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>. La notación se adapta al enfoque formal adoptado en este libro.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -842,13 +1071,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./05-condicional-independencia.html" class="pagination-link" aria-label="Probabilidad condicional e independencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-variable-aleatoria-cdf.html" class="pagination-link" aria-label="Variable aleatoria y función de distribución acumulada">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Variable aleatoria y función de distribución acumulada</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

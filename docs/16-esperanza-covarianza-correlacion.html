@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>16&nbsp; Esperanza conjunta, covarianza y correlación – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -55,8 +36,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./17-transformaciones-variables.html" rel="next">
+<link href="./15-variables-conjuntas-marginales-condicionales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16-esperanza-covarianza-correlacion.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +178,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -287,7 +268,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-esperanza-covarianza-correlacion.html" class="sidebar-item-text sidebar-link">
+  <a href="./16-esperanza-covarianza-correlacion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></span></a>
   </div>
 </li>
@@ -313,16 +294,42 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#planteamiento" id="toc-planteamiento" class="nav-link active" data-scroll-target="#planteamiento"><span class="header-section-number">16.1</span> Planteamiento</a></li>
+  <li><a href="#esperanza-de-funciones-de-dos-variables" id="toc-esperanza-de-funciones-de-dos-variables" class="nav-link" data-scroll-target="#esperanza-de-funciones-de-dos-variables"><span class="header-section-number">16.2</span> Esperanza de funciones de dos variables</a></li>
+  <li><a href="#teorema-de-linealidad" id="toc-teorema-de-linealidad" class="nav-link" data-scroll-target="#teorema-de-linealidad"><span class="header-section-number">16.3</span> Teorema de linealidad</a>
+  <ul class="collapse">
+  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
+  </ul></li>
+  <li><a href="#el-momento-mixto-exy" id="toc-el-momento-mixto-exy" class="nav-link" data-scroll-target="#el-momento-mixto-exy"><span class="header-section-number">16.4</span> El momento mixto <span class="math inline">\(E[XY]\)</span></a>
+  <ul class="collapse">
+  <li><a href="#demostración-en-el-caso-con-densidades" id="toc-demostración-en-el-caso-con-densidades" class="nav-link" data-scroll-target="#demostración-en-el-caso-con-densidades">Demostración en el caso con densidades</a></li>
+  </ul></li>
+  <li><a href="#definición-de-covarianza" id="toc-definición-de-covarianza" class="nav-link" data-scroll-target="#definición-de-covarianza"><span class="header-section-number">16.5</span> Definición de covarianza</a></li>
+  <li><a href="#propiedades-de-la-covarianza" id="toc-propiedades-de-la-covarianza" class="nav-link" data-scroll-target="#propiedades-de-la-covarianza"><span class="header-section-number">16.6</span> Propiedades de la covarianza</a></li>
+  <li><a href="#varianza-de-una-suma" id="toc-varianza-de-una-suma" class="nav-link" data-scroll-target="#varianza-de-una-suma"><span class="header-section-number">16.7</span> Varianza de una suma</a>
+  <ul class="collapse">
+  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
+  </ul></li>
+  <li><a href="#sumas-de-muchas-variables" id="toc-sumas-de-muchas-variables" class="nav-link" data-scroll-target="#sumas-de-muchas-variables"><span class="header-section-number">16.8</span> Sumas de muchas variables</a></li>
+  <li><a href="#independencia-e-incorrelación" id="toc-independencia-e-incorrelación" class="nav-link" data-scroll-target="#independencia-e-incorrelación"><span class="header-section-number">16.9</span> Independencia e incorrelación</a>
+  <ul class="collapse">
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  </ul></li>
+  <li><a href="#contraejemplo-incorrelación-sin-independencia" id="toc-contraejemplo-incorrelación-sin-independencia" class="nav-link" data-scroll-target="#contraejemplo-incorrelación-sin-independencia"><span class="header-section-number">16.10</span> Contraejemplo: incorrelación sin independencia</a></li>
+  <li><a href="#coeficiente-de-correlación" id="toc-coeficiente-de-correlación" class="nav-link" data-scroll-target="#coeficiente-de-correlación"><span class="header-section-number">16.11</span> Coeficiente de correlación</a></li>
+  <li><a href="#cota-de-correlación" id="toc-cota-de-correlación" class="nav-link" data-scroll-target="#cota-de-correlación"><span class="header-section-number">16.12</span> Cota de correlación</a>
+  <ul class="collapse">
+  <li><a href="#demostración-mediante-cauchyschwarz" id="toc-demostración-mediante-cauchyschwarz" class="nav-link" data-scroll-target="#demostración-mediante-cauchyschwarz">Demostración mediante Cauchy–Schwarz</a></li>
+  </ul></li>
+  <li><a href="#caso-de-igualdad" id="toc-caso-de-igualdad" class="nav-link" data-scroll-target="#caso-de-igualdad"><span class="header-section-number">16.13</span> Caso de igualdad</a></li>
+  <li><a href="#invariancia-frente-a-transformaciones-afines" id="toc-invariancia-frente-a-transformaciones-afines" class="nav-link" data-scroll-target="#invariancia-frente-a-transformaciones-afines"><span class="header-section-number">16.14</span> Invariancia frente a transformaciones afines</a></li>
+  <li><a href="#matriz-de-covarianzas" id="toc-matriz-de-covarianzas" class="nav-link" data-scroll-target="#matriz-de-covarianzas"><span class="header-section-number">16.15</span> Matriz de covarianzas</a></li>
+  <li><a href="#positividad-semidefinida" id="toc-positividad-semidefinida" class="nav-link" data-scroll-target="#positividad-semidefinida"><span class="header-section-number">16.16</span> Positividad semidefinida</a></li>
+  <li><a href="#ejemplo-continuo-triangular" id="toc-ejemplo-continuo-triangular" class="nav-link" data-scroll-target="#ejemplo-continuo-triangular"><span class="header-section-number">16.17</span> Ejemplo continuo triangular</a></li>
+  <li><a href="#mapa-conceptual" id="toc-mapa-conceptual" class="nav-link" data-scroll-target="#mapa-conceptual"><span class="header-section-number">16.18</span> Mapa conceptual</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">16.19</span> Ejercicios teóricos</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">16.20</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +338,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></h1>
 </div>
 
 
@@ -348,95 +355,364 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="planteamiento" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="planteamiento"><span class="header-section-number">16.1</span> Planteamiento</h2>
+<p>Sea <span class="math inline">\((X,Y)\)</span> un vector aleatorio definido sobre un espacio de probabilidad. El conocimiento de su ley conjunta permite estudiar no sólo las distribuciones marginales, sino también funciones de ambas variables y medidas de dependencia lineal.</p>
+<p>En este capítulo se formalizan la esperanza de funciones bivariadas, la covarianza, la correlación y la varianza de combinaciones lineales.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="esperanza-de-funciones-de-dos-variables" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="esperanza-de-funciones-de-dos-variables"><span class="header-section-number">16.2</span> Esperanza de funciones de dos variables</h2>
+<p>Si <span class="math inline">\((X,Y)\)</span> es discreto con función de masa conjunta <span class="math inline">\(p_{X,Y}\)</span> y <span class="math inline">\(g:\mathbb R^2\to\mathbb R\)</span> es integrable, entonces</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+E[g(X,Y)]=\sum_x\sum_y g(x,y)p_{X,Y}(x,y).
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
+<p>Si <span class="math inline">\((X,Y)\)</span> posee densidad conjunta <span class="math inline">\(f_{X,Y}\)</span>,</p>
+<p><span class="math display">\[
+E[g(X,Y)]=\iint_{\mathbb R^2}g(x,y)f_{X,Y}(x,y)\,dx\,dy.
+\]</span></p>
+<p>Estas expresiones son la versión bidimensional de la ley del estadístico inconsciente.</p>
 </section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
+<section id="teorema-de-linealidad" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="teorema-de-linealidad"><span class="header-section-number">16.3</span> Teorema de linealidad</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son integrables y <span class="math inline">\(a,b,c\in\mathbb R\)</span>, entonces</p>
+<p><span class="math display">\[
+E[aX+bY+c]=aE[X]+bE[Y]+c.
+\]</span></p>
+<p>La independencia no es necesaria.</p>
+<section id="demostración" class="level3">
+<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
+<p>Por linealidad de la integral respecto de la medida conjunta,</p>
+<p><span class="math display">\[
+E[aX+bY+c]
+=\int (aX+bY+c)\,dP
+=aE[X]+bE[Y]+c.
+\]</span></p>
+</section>
+</section>
+<section id="el-momento-mixto-exy" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="el-momento-mixto-exy"><span class="header-section-number">16.4</span> El momento mixto <span class="math inline">\(E[XY]\)</span></h2>
+<p>Cuando <span class="math inline">\(XY\)</span> es integrable,</p>
+<p><span class="math display">\[
+E[XY]
+\]</span></p>
+<p>se denomina momento mixto de orden <span class="math inline">\((1,1)\)</span>.</p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes e integrables, entonces</p>
+<p><span class="math display">\[
+E[XY]=E[X]E[Y].
+\]</span></p>
+<section id="demostración-en-el-caso-con-densidades" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-en-el-caso-con-densidades">Demostración en el caso con densidades</h3>
+<p>La independencia implica</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=f_X(x)f_Y(y).
+\]</span></p>
+<p>Por Fubini,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E[XY]
+&amp;=\iint xyf_X(x)f_Y(y)\,dx\,dy\\
+&amp;=\left(\int xf_X(x)\,dx\right)
+  \left(\int yf_Y(y)\,dy\right)\\
+&amp;=E[X]E[Y].
+\end{aligned}
+\]</span></p>
+<p>La demostración discreta es análoga sustituyendo integrales por sumas.</p>
+</section>
+</section>
+<section id="definición-de-covarianza" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="definición-de-covarianza"><span class="header-section-number">16.5</span> Definición de covarianza</h2>
+<p>Sean <span class="math inline">\(X,Y\in L^2\)</span>. Se define</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+}
+\]</span></p>
+<p>Expandiendo el producto,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y].
+}
+\]</span></p>
+</section>
+<section id="propiedades-de-la-covarianza" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="propiedades-de-la-covarianza"><span class="header-section-number">16.6</span> Propiedades de la covarianza</h2>
+<p>Para variables con segundos momentos finitos y constantes <span class="math inline">\(a,b,c,d\)</span>:</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X),
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,X)=\operatorname{Var}(X),
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,c)=0,
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(aX+b,cY+d)=ac\operatorname{Cov}(X,Y).
+\]</span></p>
+<p>Más generalmente, la covarianza es bilineal:</p>
+<p><span class="math display">\[
+\operatorname{Cov}(aX+bY,Z)
+=a\operatorname{Cov}(X,Z)+b\operatorname{Cov}(Y,Z).
+\]</span></p>
+</section>
+<section id="varianza-de-una-suma" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="varianza-de-una-suma"><span class="header-section-number">16.7</span> Varianza de una suma</h2>
+<p>Para <span class="math inline">\(X,Y\in L^2\)</span>,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+}
+\]</span></p>
+<section id="demostración-1" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
+<p>Sea</p>
+<p><span class="math display">\[
+\widetilde X=X-E[X],\qquad
+\widetilde Y=Y-E[Y].
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X+Y)
+&amp;=E[(\widetilde X+\widetilde Y)^2]\\
+&amp;=E[\widetilde X^2]+E[\widetilde Y^2]
++2E[\widetilde X\widetilde Y]\\
+&amp;=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+\end{aligned}
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\operatorname{Var}(aX+bY)
+=a^2\operatorname{Var}(X)+b^2\operatorname{Var}(Y)
++2ab\operatorname{Cov}(X,Y).
+\]</span></p>
+</section>
+</section>
+<section id="sumas-de-muchas-variables" class="level2" data-number="16.8">
+<h2 data-number="16.8" class="anchored" data-anchor-id="sumas-de-muchas-variables"><span class="header-section-number">16.8</span> Sumas de muchas variables</h2>
+<p>Para <span class="math inline">\(X_1,\dots,X_n\in L^2\)</span>,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}\left(\sum_{i=1}^nX_i\right)
+=\sum_{i=1}^n\operatorname{Var}(X_i)
++2\sum_{i&lt;j}\operatorname{Cov}(X_i,X_j).
+}
+\]</span></p>
+<p>Si las variables son independientes, todas las covarianzas cruzadas son cero.</p>
+</section>
+<section id="independencia-e-incorrelación" class="level2" data-number="16.9">
+<h2 data-number="16.9" class="anchored" data-anchor-id="independencia-e-incorrelación"><span class="header-section-number">16.9</span> Independencia e incorrelación</h2>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes y tienen segundos momentos finitos, entonces</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0.
+\]</span></p>
+</section>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Por independencia,</p>
+<p><span class="math display">\[
+E[XY]=E[X]E[Y].
+\]</span></p>
+<p>Sustituyendo en la identidad de covarianza,</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)
+=E[XY]-E[X]E[Y]=0.
+\]</span></p>
+<p>El recíproco es falso en general.</p>
+</section>
+</section>
+<section id="contraejemplo-incorrelación-sin-independencia" class="level2" data-number="16.10">
+<h2 data-number="16.10" class="anchored" data-anchor-id="contraejemplo-incorrelación-sin-independencia"><span class="header-section-number">16.10</span> Contraejemplo: incorrelación sin independencia</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+X\sim U(-1,1),\qquad Y=X^2.
+\]</span></p>
+<p>Entonces <span class="math inline">\(Y\)</span> es una función determinista de <span class="math inline">\(X\)</span>, de modo que existe dependencia completa. Sin embargo,</p>
+<p><span class="math display">\[
+E[X]=0,
+\]</span></p>
+<p><span class="math display">\[
+E[XY]=E[X^3]=0
+\]</span></p>
+<p>por simetría, y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0.
+\]</span></p>
+<p>Este ejemplo muestra que la covarianza sólo captura un tipo particular de dependencia: la componente lineal.</p>
+</section>
+<section id="coeficiente-de-correlación" class="level2" data-number="16.11">
+<h2 data-number="16.11" class="anchored" data-anchor-id="coeficiente-de-correlación"><span class="header-section-number">16.11</span> Coeficiente de correlación</h2>
+<p>Si</p>
+<p><span class="math display">\[
+0&lt;\operatorname{Var}(X)&lt;\infty,
+\qquad
+0&lt;\operatorname{Var}(Y)&lt;\infty,
+\]</span></p>
+<p>se define</p>
+<p><span class="math display">\[
+\boxed{
+\rho_{X,Y}
+=\frac{\operatorname{Cov}(X,Y)}
+{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}.
+}
+\]</span></p>
+</section>
+<section id="cota-de-correlación" class="level2" data-number="16.12">
+<h2 data-number="16.12" class="anchored" data-anchor-id="cota-de-correlación"><span class="header-section-number">16.12</span> Cota de correlación</h2>
+<p>Se cumple</p>
+<p><span class="math display">\[
+\boxed{|\rho_{X,Y}|\le1}.
+\]</span></p>
+<section id="demostración-mediante-cauchyschwarz" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-mediante-cauchyschwarz">Demostración mediante Cauchy–Schwarz</h3>
+<p>Sean</p>
+<p><span class="math display">\[
+U=X-E[X],\qquad V=Y-E[Y].
+\]</span></p>
+<p>La desigualdad de Cauchy–Schwarz da</p>
+<p><span class="math display">\[
+|E[UV]|^2\le E[U^2]E[V^2].
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+|\operatorname{Cov}(X,Y)|^2
+\le\operatorname{Var}(X)\operatorname{Var}(Y).
+\]</span></p>
+<p>Dividiendo por el producto positivo de las varianzas,</p>
+<p><span class="math display">\[
+|\rho_{X,Y}|\le1.
+\]</span></p>
+</section>
+</section>
+<section id="caso-de-igualdad" class="level2" data-number="16.13">
+<h2 data-number="16.13" class="anchored" data-anchor-id="caso-de-igualdad"><span class="header-section-number">16.13</span> Caso de igualdad</h2>
+<p>La igualdad en Cauchy–Schwarz ocurre si y sólo si las variables centradas son linealmente dependientes casi seguramente. En consecuencia,</p>
+<p><span class="math display">\[
+|\rho_{X,Y}|=1
+\]</span></p>
+<p>si y sólo si existen constantes <span class="math inline">\(a\ne0\)</span> y <span class="math inline">\(b\)</span> tales que</p>
+<p><span class="math display">\[
+Y=aX+b
+\]</span></p>
+<p>casi seguramente.</p>
+<p>El signo de <span class="math inline">\(a\)</span> determina si <span class="math inline">\(\rho=1\)</span> o <span class="math inline">\(\rho=-1\)</span>.</p>
+</section>
+<section id="invariancia-frente-a-transformaciones-afines" class="level2" data-number="16.14">
+<h2 data-number="16.14" class="anchored" data-anchor-id="invariancia-frente-a-transformaciones-afines"><span class="header-section-number">16.14</span> Invariancia frente a transformaciones afines</h2>
+<p>Sean</p>
+<p><span class="math display">\[
+U=aX+b,\qquad V=cY+d,
+\]</span></p>
+<p>con <span class="math inline">\(a,c\ne0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\rho_{U,V}=\operatorname{sign}(ac)\rho_{X,Y}.
+\]</span></p>
+<p>Por tanto, cambios positivos de unidades no alteran la correlación.</p>
+</section>
+<section id="matriz-de-covarianzas" class="level2" data-number="16.15">
+<h2 data-number="16.15" class="anchored" data-anchor-id="matriz-de-covarianzas"><span class="header-section-number">16.15</span> Matriz de covarianzas</h2>
+<p>Para el vector</p>
+<p><span class="math display">\[
+\mathbf X=(X_1,\dots,X_n)^T,
+\]</span></p>
+<p>su matriz de covarianzas es</p>
+<p><span class="math display">\[
+\Sigma_{ij}=\operatorname{Cov}(X_i,X_j).
+\]</span></p>
+<p>En dimensión dos,</p>
+<p><span class="math display">\[
+\Sigma=
+\begin{pmatrix}
+\operatorname{Var}(X)&amp;\operatorname{Cov}(X,Y)\\
+\operatorname{Cov}(X,Y)&amp;\operatorname{Var}(Y)
+\end{pmatrix}.
+\]</span></p>
+</section>
+<section id="positividad-semidefinida" class="level2" data-number="16.16">
+<h2 data-number="16.16" class="anchored" data-anchor-id="positividad-semidefinida"><span class="header-section-number">16.16</span> Positividad semidefinida</h2>
+<p>Para todo vector <span class="math inline">\(a\in\mathbb R^n\)</span>,</p>
+<p><span class="math display">\[
+a^T\Sigma a
+=\operatorname{Var}(a^T\mathbf X)\ge0.
+\]</span></p>
+<p>Por ello, toda matriz de covarianzas es simétrica y positiva semidefinida.</p>
+</section>
+<section id="ejemplo-continuo-triangular" class="level2" data-number="16.17">
+<h2 data-number="16.17" class="anchored" data-anchor-id="ejemplo-continuo-triangular"><span class="header-section-number">16.17</span> Ejemplo continuo triangular</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=2,
+\qquad0&lt;y&lt;x&lt;1.
+\]</span></p>
+<p>Las marginales son</p>
+<p><span class="math display">\[
+f_X(x)=2x,
+\qquad
+f_Y(y)=2(1-y).
+\]</span></p>
+<p>Se obtiene</p>
+<p><span class="math display">\[
+E[X]=\frac23,
+\qquad
+E[Y]=\frac13,
+\]</span></p>
+<p><span class="math display">\[
+E[XY]=\frac14,
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)
+=\frac14-\frac{2}{9}
+=\frac1{36}.
+\]</span></p>
+<p>Este ejemplo combina dependencia geométrica del soporte con una covarianza positiva.</p>
+</section>
+<section id="mapa-conceptual" class="level2" data-number="16.18">
+<h2 data-number="16.18" class="anchored" data-anchor-id="mapa-conceptual"><span class="header-section-number">16.18</span> Mapa conceptual</h2>
+<p>La cadena lógica principal es</p>
+<p><span class="math display">\[
+\text{ley conjunta}
+\Longrightarrow E[g(X,Y)]
+\Longrightarrow E[XY]
+\Longrightarrow \operatorname{Cov}(X,Y)
+\Longrightarrow \rho_{X,Y}.
+\]</span></p>
+<p>La implicación</p>
+<p><span class="math display">\[
+X\perp Y\Longrightarrow\operatorname{Cov}(X,Y)=0
+\]</span></p>
+<p>es válida, pero</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0\not\Longrightarrow X\perp Y
+\]</span></p>
+<p>en general.</p>
+</section>
+<section id="ejercicios-teóricos" class="level2" data-number="16.19">
+<h2 data-number="16.19" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">16.19</span> Ejercicios teóricos</h2>
 <ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
-<p><span class="math display">\[
-(\Omega,\mathcal{F},P),
-\]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
-<p><span class="math display">\[
-P(\text{cara})=\frac12,
-\]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
-</section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
-</section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
-<ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
-</ul>
-</section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
-<ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
+<li>Demuestre la bilinealidad de la covarianza.</li>
+<li>Demuestre la fórmula de <span class="math inline">\(\operatorname{Var}(aX+bY)\)</span>.</li>
+<li>Extienda la fórmula anterior a una suma de <span class="math inline">\(n\)</span> variables.</li>
+<li>Demuestre que independencia implica incorrelación bajo segundos momentos finitos.</li>
+<li>Verifique rigurosamente el contraejemplo <span class="math inline">\(X\sim U(-1,1)\)</span>, <span class="math inline">\(Y=X^2\)</span>.</li>
+<li>Demuestre <span class="math inline">\(|\rho|\le1\)</span> mediante Cauchy–Schwarz.</li>
+<li>Caracterice el caso <span class="math inline">\(|\rho|=1\)</span>.</li>
+<li>Demuestre la invariancia de <span class="math inline">\(|\rho|\)</span> frente a transformaciones afines no degeneradas.</li>
+<li>Demuestre que una matriz de covarianzas es positiva semidefinida.</li>
+<li>Para la densidad triangular del capítulo, calcule las dos varianzas y la correlación exacta.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="16.20">
+<h2 data-number="16.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">16.20</span> Referencias del capítulo</h2>
+<p>El tratamiento formal de momentos conjuntos, covarianza y correlación sigue textos clásicos de probabilidad y estadística matemática citados en la bibliografía general del libro.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-devore2016" class="csl-entry" role="listitem">
-Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
-</div>
-<div id="ref-johnson2018" class="csl-entry" role="listitem">
-Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
-</div>
-<div id="ref-montgomery2018" class="csl-entry" role="listitem">
-Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
-</div>
-<div id="ref-walpole2012" class="csl-entry" role="listitem">
-Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -842,13 +1118,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./15-variables-conjuntas-marginales-condicionales.html" class="pagination-link" aria-label="Variables aleatorias conjuntas, distribuciones marginales y condicionales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Variables aleatorias conjuntas, distribuciones marginales y condicionales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./17-transformaciones-variables.html" class="pagination-link" aria-label="Transformaciones de variables aleatorias">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformaciones de variables aleatorias</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

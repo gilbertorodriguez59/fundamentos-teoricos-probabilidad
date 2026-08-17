@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>9&nbsp; Variables aleatorias continuas y función de densidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./10-esperanza-varianza-chebyshev.html" rel="next">
+<link href="./08-variables-discretas-pmf.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-variables-continuas-densidad.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -245,7 +245,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span></a>
   </div>
 </li>
@@ -313,16 +313,23 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">9.1</span> Objetivos</a></li>
+  <li><a href="#variables-aleatorias-absolutamente-continuas" id="toc-variables-aleatorias-absolutamente-continuas" class="nav-link" data-scroll-target="#variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</a></li>
+  <li><a href="#condiciones-básicas-de-una-densidad" id="toc-condiciones-básicas-de-una-densidad" class="nav-link" data-scroll-target="#condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</a></li>
+  <li><a href="#probabilidad-de-intervalos" id="toc-probabilidad-de-intervalos" class="nav-link" data-scroll-target="#probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</a></li>
+  <li><a href="#la-densidad-no-es-una-probabilidad-puntual" id="toc-la-densidad-no-es-una-probabilidad-puntual" class="nav-link" data-scroll-target="#la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</a></li>
+  <li><a href="#función-de-distribución-acumulada" id="toc-función-de-distribución-acumulada" class="nav-link" data-scroll-target="#función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</a></li>
+  <li><a href="#recuperación-de-probabilidades-desde-la-cdf" id="toc-recuperación-de-probabilidades-desde-la-cdf" class="nav-link" data-scroll-target="#recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</a></li>
+  <li><a href="#densidad-a-partir-de-una-cdf" id="toc-densidad-a-partir-de-una-cdf" class="nav-link" data-scroll-target="#densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</a></li>
+  <li><a href="#ejemplo-normalizado" id="toc-ejemplo-normalizado" class="nav-link" data-scroll-target="#ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</a></li>
+  <li><a href="#propiedad-de-conjuntos-de-medida-cero" id="toc-propiedad-de-conjuntos-de-medida-cero" class="nav-link" data-scroll-target="#propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</a></li>
+  <li><a href="#comparación-formal-con-el-caso-discreto" id="toc-comparación-formal-con-el-caso-discreto" class="nav-link" data-scroll-target="#comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</a></li>
+  <li><a href="#soporte-de-una-distribución-continua" id="toc-soporte-de-una-distribución-continua" class="nav-link" data-scroll-target="#soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</a></li>
+  <li><a href="#unicidad-casi-en-todas-partes" id="toc-unicidad-casi-en-todas-partes" class="nav-link" data-scroll-target="#unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</a></li>
+  <li><a href="#transformaciones-monótonas" id="toc-transformaciones-monótonas" class="nav-link" data-scroll-target="#transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</a></li>
+  <li><a href="#ejemplo-de-transformación" id="toc-ejemplo-de-transformación" class="nav-link" data-scroll-target="#ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.16</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +338,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></h1>
 </div>
 
 
@@ -348,79 +355,231 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="objetivos" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">9.1</span> Objetivos</h2>
+<p>En este capítulo se formalizan las variables aleatorias absolutamente continuas, sus funciones de densidad y su relación con la función de distribución acumulada. Se enfatizan las propiedades analíticas que distinguen el caso continuo del discreto.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="variables-aleatorias-absolutamente-continuas" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria definida sobre <span class="math inline">\((\Omega,\mathcal F,P)\)</span>. Decimos que <span class="math inline">\(X\)</span> es <strong>absolutamente continua</strong> si existe una función integrable</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+f_X:\mathbb R\to[0,\infty)
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
+<p>tal que, para todo conjunto boreliano <span class="math inline">\(A\subseteq\mathbb R\)</span>,</p>
+<p><span class="math display">\[
+P(X\in A)=\int_A f_X(x)\,dx.
+\]</span></p>
+<p>La función <span class="math inline">\(f_X\)</span> se denomina <strong>densidad de probabilidad</strong> de <span class="math inline">\(X\)</span>.</p>
 </section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
+<section id="condiciones-básicas-de-una-densidad" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</h2>
+<p>Toda densidad satisface</p>
+<p><span class="math display">\[
+f_X(x)\geq0
+\]</span></p>
+<p>para casi todo <span class="math inline">\(x\)</span>, y</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty} f_X(x)\,dx=1.
+\]</span></p>
+<p>Recíprocamente, toda función medible no negativa con integral total 1 define una distribución absolutamente continua.</p>
+</section>
+<section id="probabilidad-de-intervalos" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</h2>
+<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
+<p><span class="math display">\[
+P(a&lt;X\leq b)=\int_a^b f_X(x)\,dx.
+\]</span></p>
+<p>Como los conjuntos de un solo punto tienen medida de Lebesgue cero,</p>
+<p><span class="math display">\[
+P(X=x)=0
+\]</span></p>
+<p>para todo <span class="math inline">\(x\in\mathbb R\)</span>.</p>
+<p>Por ello,</p>
+<p><span class="math display">\[
+P(a&lt;X&lt;b)=P(a\leq X\leq b)=P(a&lt;X\leq b).
+\]</span></p>
+</section>
+<section id="la-densidad-no-es-una-probabilidad-puntual" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</h2>
+<p>En general,</p>
+<p><span class="math display">\[
+f_X(x)\neq P(X=x).
+\]</span></p>
+<p>La densidad describe cómo se distribuye localmente la probabilidad respecto de la medida de Lebesgue. Su valor puntual puede ser mayor que 1 sin contradicción, siempre que la integral total permanezca igual a 1.</p>
+</section>
+<section id="función-de-distribución-acumulada" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</h2>
+<p>La CDF de <span class="math inline">\(X\)</span> es</p>
+<p><span class="math display">\[
+F_X(x)=P(X\leq x).
+\]</span></p>
+<p>Si <span class="math inline">\(X\)</span> es absolutamente continua,</p>
+<p><span class="math display">\[
+\boxed{F_X(x)=\int_{-\infty}^{x}f_X(t)\,dt}.
+\]</span></p>
+<p>En consecuencia, <span class="math inline">\(F_X\)</span> es absolutamente continua y</p>
+<p><span class="math display">\[
+F_X'(x)=f_X(x)
+\]</span></p>
+<p>para casi todo <span class="math inline">\(x\)</span>.</p>
+</section>
+<section id="recuperación-de-probabilidades-desde-la-cdf" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</h2>
+<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
+<p><span class="math display">\[
+P(a&lt;X\leq b)=F_X(b)-F_X(a).
+\]</span></p>
+<p>Como <span class="math inline">\(P(X=a)=0\)</span>,</p>
+<p><span class="math display">\[
+P(a&lt;X&lt;b)=F_X(b)-F_X(a).
+\]</span></p>
+<p>También</p>
+<p><span class="math display">\[
+P(X&gt;x)=1-F_X(x).
+\]</span></p>
+</section>
+<section id="densidad-a-partir-de-una-cdf" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</h2>
+<p>Si una CDF <span class="math inline">\(F\)</span> es absolutamente continua, entonces existe una función integrable <span class="math inline">\(f\)</span> tal que</p>
+<p><span class="math display">\[
+F(x)=\int_{-\infty}^{x}f(t)\,dt.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+f(x)=F'(x)
+\]</span></p>
+<p>casi en todas partes.</p>
+<p>No toda CDF continua posee necesariamente una densidad; la continuidad por sí sola es una condición más débil que la absoluta continuidad.</p>
+</section>
+<section id="ejemplo-normalizado" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+f(x)=
+\begin{cases}
+cx, &amp; 0\leq x\leq2,\\
+0, &amp; \text{en otro caso}.
+\end{cases}
+\]</span></p>
+<p>La condición</p>
+<p><span class="math display">\[
+\int_0^2 cx\,dx=1
+\]</span></p>
+<p>produce</p>
+<p><span class="math display">\[
+c=\frac12.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+f(x)=\frac{x}{2},\qquad0\leq x\leq2.
+\]</span></p>
+<p>La CDF es</p>
+<p><span class="math display">\[
+F(x)=
+\begin{cases}
+0, &amp; x&lt;0,\\
+\frac{x^2}{4}, &amp; 0\leq x\leq2,\\
+1, &amp; x&gt;2.
+\end{cases}
+\]</span></p>
+</section>
+<section id="propiedad-de-conjuntos-de-medida-cero" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</h2>
+<p>Si <span class="math inline">\(N\subseteq\mathbb R\)</span> tiene medida de Lebesgue cero y <span class="math inline">\(X\)</span> es absolutamente continua, entonces</p>
+<p><span class="math display">\[
+P(X\in N)=0.
+\]</span></p>
+<p>Esto incluye todos los conjuntos finitos y numerables. Así, una variable absolutamente continua asigna probabilidad cero a cualquier conjunto numerable de valores.</p>
+</section>
+<section id="comparación-formal-con-el-caso-discreto" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</h2>
+<p>En el caso discreto,</p>
+<p><span class="math display">\[
+P(X=x)=p_X(x)
+\]</span></p>
+<p>puede ser positivo.</p>
+<p>En el caso absolutamente continuo,</p>
+<p><span class="math display">\[
+P(X=x)=0
+\]</span></p>
+<p>para todo <span class="math inline">\(x\)</span>.</p>
+<p>La suma</p>
+<p><span class="math display">\[
+\sum_x p_X(x)
+\]</span></p>
+<p>del caso discreto es reemplazada por la integral</p>
+<p><span class="math display">\[
+\int f_X(x)\,dx.
+\]</span></p>
+</section>
+<section id="soporte-de-una-distribución-continua" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</h2>
+<p>Una noción útil de soporte es el cierre del conjunto donde la densidad es positiva. Si</p>
+<p><span class="math display">\[
+f_X(x)&gt;0
+\]</span></p>
+<p>sólo para <span class="math inline">\(x\in(a,b)\)</span>, entonces el soporte puede identificarse con <span class="math inline">\([a,b]\)</span> bajo condiciones regulares.</p>
+</section>
+<section id="unicidad-casi-en-todas-partes" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</h2>
+<p>Si dos densidades <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> generan la misma distribución, entonces</p>
+<p><span class="math display">\[
+f(x)=g(x)
+\]</span></p>
+<p>para casi todo <span class="math inline">\(x\)</span>.</p>
+<p>Es decir, pueden diferir en un conjunto de medida cero sin alterar ninguna probabilidad.</p>
+</section>
+<section id="transformaciones-monótonas" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</h2>
+<p>Sea <span class="math inline">\(Y=g(X)\)</span>, donde <span class="math inline">\(g\)</span> es estrictamente monótona, diferenciable y con inversa diferenciable. Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<p><span class="math display">\[
+f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|.
+\]</span></p>
+<p>Esta fórmula se estudiará con mayor detalle al abordar funciones de variables aleatorias.</p>
+</section>
+<section id="ejemplo-de-transformación" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</h2>
+<p>Si <span class="math inline">\(X\)</span> tiene densidad</p>
+<p><span class="math display">\[
+f_X(x)=2x,\qquad0&lt;x&lt;1,
+\]</span></p>
+<p>y definimos</p>
+<p><span class="math display">\[
+Y=X^2,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+g^{-1}(y)=\sqrt y,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\frac{d}{dy}g^{-1}(y)=\frac{1}{2\sqrt y}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+f_Y(y)=2\sqrt y\cdot\frac{1}{2\sqrt y}=1,
+\]</span></p>
+<p>para <span class="math inline">\(0&lt;y&lt;1\)</span>.</p>
+<p>Así, <span class="math inline">\(Y\)</span> tiene densidad uniforme sobre <span class="math inline">\((0,1)\)</span>.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="9.16">
+<h2 data-number="9.16" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.16</span> Ejercicios</h2>
 <ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
-<p><span class="math display">\[
-(\Omega,\mathcal{F},P),
-\]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
-<p><span class="math display">\[
-P(\text{cara})=\frac12,
-\]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
-</section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
-</section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
-<ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
-</ul>
-</section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
-<ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
+<li>Demuestra que si <span class="math inline">\(f\geq0\)</span> y <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx=1\)</span>, entonces <span class="math inline">\(P(A)=\int_Af(x)dx\)</span> define una medida de probabilidad sobre los borelianos.</li>
+<li>Prueba que una variable absolutamente continua satisface <span class="math inline">\(P(X=x)=0\)</span> para todo <span class="math inline">\(x\)</span>.</li>
+<li>Sea <span class="math inline">\(f(x)=c(1+x)\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>. Determina <span class="math inline">\(c\)</span> y la CDF correspondiente.</li>
+<li>Demuestra que, para una variable absolutamente continua, incluir o excluir los extremos de un intervalo no cambia su probabilidad.</li>
+<li>Sea <span class="math inline">\(F(x)=x^3\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>, con las extensiones usuales fuera del intervalo. Determina la densidad.</li>
+<li>Explica por qué modificar una densidad en un solo punto no cambia la distribución.</li>
+<li>Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(2x\)</span> en <span class="math inline">\((0,1)\)</span> y <span class="math inline">\(Y=X^2\)</span>, deriva formalmente la densidad de <span class="math inline">\(Y\)</span>.</li>
+<li>Prueba que si <span class="math inline">\(N\)</span> es numerable y <span class="math inline">\(X\)</span> es absolutamente continua, entonces <span class="math inline">\(P(X\in N)=0\)</span>.</li>
+<li>Da un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.</li>
+<li><strong>Reto ★.</strong> Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="9.17">
+<h2 data-number="9.17" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada al nivel formal de este volumen.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -842,13 +1001,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./08-variables-discretas-pmf.html" class="pagination-link" aria-label="Variables aleatorias discretas y función de masa de probabilidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-esperanza-varianza-chebyshev.html" class="pagination-link" aria-label="Esperanza matemática, momentos, varianza y desigualdades probabilísticas">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

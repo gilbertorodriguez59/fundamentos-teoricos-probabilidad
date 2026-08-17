@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>12&nbsp; Distribuciones discretas especiales II: hipergeométrica y Poisson – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./13-distribuciones-continuas-especiales.html" rel="next">
+<link href="./11-distribuciones-discretas-especiales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-hipergeometrica-poisson.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -263,7 +263,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span></a>
   </div>
 </li>
@@ -313,16 +313,24 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">12.1</span> Objetivos</a></li>
+  <li><a href="#distribución-hipergeométrica" id="toc-distribución-hipergeométrica" class="nav-link" data-scroll-target="#distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</a>
+  <ul class="collapse">
+  <li><a href="#normalización" id="toc-normalización" class="nav-link" data-scroll-target="#normalización">Normalización</a></li>
+  </ul></li>
+  <li><a href="#media-de-la-hipergeométrica" id="toc-media-de-la-hipergeométrica" class="nav-link" data-scroll-target="#media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</a></li>
+  <li><a href="#varianza-de-la-hipergeométrica" id="toc-varianza-de-la-hipergeométrica" class="nav-link" data-scroll-target="#varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</a></li>
+  <li><a href="#aproximación-binomial-de-la-hipergeométrica" id="toc-aproximación-binomial-de-la-hipergeométrica" class="nav-link" data-scroll-target="#aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</a></li>
+  <li><a href="#distribución-de-poisson" id="toc-distribución-de-poisson" class="nav-link" data-scroll-target="#distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</a></li>
+  <li><a href="#normalización-1" id="toc-normalización-1" class="nav-link" data-scroll-target="#normalización-1"><span class="header-section-number">12.7</span> Normalización</a></li>
+  <li><a href="#media-y-varianza-de-poisson" id="toc-media-y-varianza-de-poisson" class="nav-link" data-scroll-target="#media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</a></li>
+  <li><a href="#función-generadora-de-probabilidades" id="toc-función-generadora-de-probabilidades" class="nav-link" data-scroll-target="#función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</a></li>
+  <li><a href="#suma-de-poisson-independientes" id="toc-suma-de-poisson-independientes" class="nav-link" data-scroll-target="#suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</a></li>
+  <li><a href="#límite-de-poisson-de-la-binomial" id="toc-límite-de-poisson-de-la-binomial" class="nav-link" data-scroll-target="#límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</a></li>
+  <li><a href="#interpretación-de-lambda" id="toc-interpretación-de-lambda" class="nav-link" data-scroll-target="#interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></a></li>
+  <li><a href="#diferencias-estructurales" id="toc-diferencias-estructurales" class="nav-link" data-scroll-target="#diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">12.14</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +339,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></h1>
 </div>
 
 
@@ -348,79 +356,236 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="objetivos" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">12.1</span> Objetivos</h2>
+<p>Este capítulo desarrolla formalmente dos familias discretas fundamentales: la distribución hipergeométrica, asociada al muestreo sin reemplazo en poblaciones finitas, y la distribución de Poisson, asociada al conteo de eventos raros o dispersos en intervalos.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="distribución-hipergeométrica" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</h2>
+<p>Sea una población finita de tamaño <span class="math inline">\(N\)</span> con <span class="math inline">\(K\)</span> elementos clasificados como éxitos y <span class="math inline">\(N-K\)</span> como fracasos. Se extrae una muestra de tamaño <span class="math inline">\(n\)</span> sin reemplazo y se define <span class="math inline">\(X\)</span> como el número de éxitos observados.</p>
+<p>Entonces</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+P(X=x)=\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}},
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
+<p>para</p>
+<p><span class="math display">\[
+\max(0,n-N+K)\le x\le\min(n,K).
+\]</span></p>
+<section id="normalización" class="level3">
+<h3 class="anchored" data-anchor-id="normalización">Normalización</h3>
+<p>La identidad de Vandermonde</p>
+<p><span class="math display">\[
+\sum_x \binom{K}{x}\binom{N-K}{n-x}=\binom{N}{n}
+\]</span></p>
+<p>implica inmediatamente que</p>
+<p><span class="math display">\[
+\sum_x P(X=x)=1.
+\]</span></p>
 </section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
+</section>
+<section id="media-de-la-hipergeométrica" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</h2>
+<p>Escribamos</p>
+<p><span class="math display">\[
+X=I_1+\cdots+I_n,
+\]</span></p>
+<p>donde <span class="math inline">\(I_j\)</span> indica que la extracción <span class="math inline">\(j\)</span> corresponde a uno de los <span class="math inline">\(K\)</span> elementos de interés. Por simetría,</p>
+<p><span class="math display">\[
+E[I_j]=\frac KN.
+\]</span></p>
+<p>Por linealidad,</p>
+<p><span class="math display">\[
+\boxed{E[X]=n\frac KN}.
+\]</span></p>
+<p>La independencia no es necesaria para este argumento.</p>
+</section>
+<section id="varianza-de-la-hipergeométrica" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</h2>
+<p>Las variables indicadoras de distintas extracciones no son independientes. Para <span class="math inline">\(i\ne j\)</span>,</p>
+<p><span class="math display">\[
+E[I_iI_j]=\frac KN\frac{K-1}{N-1}.
+\]</span></p>
+<p>De aquí se obtiene</p>
+<p><span class="math display">\[
+\operatorname{Cov}(I_i,I_j)
+=-\frac{K(N-K)}{N^2(N-1)}.
+\]</span></p>
+<p>Al sumar varianzas y covarianzas,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}(X)
+=n\frac KN\left(1-\frac KN\right)\frac{N-n}{N-1}
+}.
+\]</span></p>
+<p>El factor</p>
+<p><span class="math display">\[
+\frac{N-n}{N-1}
+\]</span></p>
+<p>expresa la reducción de variabilidad debida al muestreo sin reemplazo.</p>
+</section>
+<section id="aproximación-binomial-de-la-hipergeométrica" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</h2>
+<p>Si <span class="math inline">\(N\)</span> es grande respecto de <span class="math inline">\(n\)</span> y</p>
+<p><span class="math display">\[
+p=\frac KN,
+\]</span></p>
+<p>la dependencia inducida por no reemplazar es débil. En este régimen,</p>
+<p><span class="math display">\[
+\operatorname{Hipergeométrica}(N,K,n)
+\approx
+\operatorname{Binomial}(n,p).
+\]</span></p>
+<p>La convergencia puede verse comparando los factores sucesivos de ambas PMF cuando <span class="math inline">\(N\to\infty\)</span>, <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> permanece fijo.</p>
+</section>
+<section id="distribución-de-poisson" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</h2>
+<p>Para <span class="math inline">\(\lambda&gt;0\)</span>, una variable <span class="math inline">\(X\)</span> tiene distribución de Poisson si</p>
+<p><span class="math display">\[
+\boxed{P(X=x)=e^{-\lambda}\frac{\lambda^x}{x!}},
+\qquad x=0,1,2,\ldots
+\]</span></p>
+<p>Escribimos</p>
+<p><span class="math display">\[
+X\sim\operatorname{Poisson}(\lambda).
+\]</span></p>
+</section>
+<section id="normalización-1" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="normalización-1"><span class="header-section-number">12.7</span> Normalización</h2>
+<p>Por la serie exponencial,</p>
+<p><span class="math display">\[
+e^{\lambda}=\sum_{x=0}^{\infty}\frac{\lambda^x}{x!}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\sum_{x=0}^{\infty}e^{-\lambda}\frac{\lambda^x}{x!}=1.
+\]</span></p>
+</section>
+<section id="media-y-varianza-de-poisson" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</h2>
+<p>Para la media,</p>
+<p><span class="math display">\[
+E[X]
+=\sum_{x=1}^{\infty}x e^{-\lambda}\frac{\lambda^x}{x!}
+=\lambda e^{-\lambda}\sum_{x=1}^{\infty}\frac{\lambda^{x-1}}{(x-1)!}
+=\lambda.
+\]</span></p>
+<p>Asimismo,</p>
+<p><span class="math display">\[
+E[X(X-1)]=\lambda^2.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+X^2=X(X-1)+X,
+\]</span></p>
+<p>se sigue que</p>
+<p><span class="math display">\[
+E[X^2]=\lambda^2+\lambda
+\]</span></p>
+<p>y entonces</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=\lambda}.
+\]</span></p>
+</section>
+<section id="función-generadora-de-probabilidades" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</h2>
+<p>La función generadora de probabilidades es</p>
+<p><span class="math display">\[
+G_X(s)=E[s^X].
+\]</span></p>
+<p>Para una Poisson,</p>
+<p><span class="math display">\[
+G_X(s)=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda s)^x}{x!}
+=\exp\{\lambda(s-1)\}.
+\]</span></p>
+<p>Esta expresión permite obtener momentos y estudiar sumas de variables independientes.</p>
+</section>
+<section id="suma-de-poisson-independientes" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</h2>
+<p>Si</p>
+<p><span class="math display">\[
+X\sim\operatorname{Poisson}(\lambda_1),
+\qquad
+Y\sim\operatorname{Poisson}(\lambda_2)
+\]</span></p>
+<p>son independientes, entonces</p>
+<p><span class="math display">\[
+G_{X+Y}(s)=G_X(s)G_Y(s)
+=\exp\{(\lambda_1+\lambda_2)(s-1)\}.
+\]</span></p>
+<p>Por unicidad de la función generadora,</p>
+<p><span class="math display">\[
+\boxed{X+Y\sim\operatorname{Poisson}(\lambda_1+\lambda_2)}.
+\]</span></p>
+<p>El resultado se extiende a cualquier suma finita de variables Poisson independientes.</p>
+</section>
+<section id="límite-de-poisson-de-la-binomial" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+X_n\sim\operatorname{Binomial}(n,p_n),
+\]</span></p>
+<p>y supongamos</p>
+<p><span class="math display">\[
+np_n\to\lambda&gt;0.
+\]</span></p>
+<p>Para <span class="math inline">\(x\)</span> fijo,</p>
+<p><span class="math display">\[
+P(X_n=x)
+=\binom nx p_n^x(1-p_n)^{n-x}.
+\]</span></p>
+<p>Tomando, por simplicidad, <span class="math inline">\(p_n=\lambda/n\)</span>,</p>
+<p><span class="math display">\[
+P(X_n=x)
+=\frac{n(n-1)\cdots(n-x+1)}{x!}
+\left(\frac{\lambda}{n}\right)^x
+\left(1-\frac{\lambda}{n}\right)^{n-x}.
+\]</span></p>
+<p>Cuando <span class="math inline">\(n\to\infty\)</span>,</p>
+<p><span class="math display">\[
+\frac{n(n-1)\cdots(n-x+1)}{n^x}\to1
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\left(1-\frac{\lambda}{n}\right)^n\to e^{-\lambda}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\boxed{
+P(X_n=x)\to e^{-\lambda}\frac{\lambda^x}{x!}
+}.
+\]</span></p>
+<p>Éste es el teorema límite de Poisson para eventos raros.</p>
+</section>
+<section id="interpretación-de-lambda" class="level2" data-number="12.12">
+<h2 data-number="12.12" class="anchored" data-anchor-id="interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></h2>
+<p>El parámetro <span class="math inline">\(\lambda\)</span> representa el número esperado de eventos en el intervalo considerado. Si existe una tasa <span class="math inline">\(r\)</span> por unidad y el intervalo tiene longitud <span class="math inline">\(t\)</span>, se modela habitualmente con</p>
+<p><span class="math display">\[
+\lambda=rt.
+\]</span></p>
+<p>Esta interpretación anticipa el proceso de Poisson, que requiere una teoría adicional sobre conteos en intervalos disjuntos y tiempos de llegada.</p>
+</section>
+<section id="diferencias-estructurales" class="level2" data-number="12.13">
+<h2 data-number="12.13" class="anchored" data-anchor-id="diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</h2>
+<p>La hipergeométrica surge de un espacio finito con muestreo sin reemplazo. La Poisson posee soporte infinito y suele aparecer como límite de conteos binomiales de eventos raros. La primera exhibe dependencia negativa entre extracciones; la segunda se caracteriza por igualdad entre media y varianza.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="12.14">
+<h2 data-number="12.14" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">12.14</span> Ejercicios</h2>
 <ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
-<p><span class="math display">\[
-(\Omega,\mathcal{F},P),
-\]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
-<p><span class="math display">\[
-P(\text{cara})=\frac12,
-\]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
-</section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
-</section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
-<ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
-</ul>
-</section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
-<ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
+<li>Demuestra la normalización hipergeométrica usando la identidad de Vandermonde.</li>
+<li>Obtén <span class="math inline">\(E[X]\)</span> de la hipergeométrica mediante variables indicadoras.</li>
+<li>Deriva la covarianza entre dos indicadores de extracciones sin reemplazo.</li>
+<li>A partir del ejercicio anterior, demuestra la fórmula de la varianza hipergeométrica.</li>
+<li>Demuestra la normalización de la distribución Poisson mediante la serie de <span class="math inline">\(e^\lambda\)</span>.</li>
+<li>Obtén <span class="math inline">\(E[X(X-1)]\)</span> para <span class="math inline">\(X\sim\operatorname{Poisson}(\lambda)\)</span>.</li>
+<li>Usa el resultado anterior para demostrar que <span class="math inline">\(\operatorname{Var}(X)=\lambda\)</span>.</li>
+<li>Demuestra el resultado de suma de Poisson independientes usando funciones generadoras.</li>
+<li>Demuestra el límite binomial–Poisson para <span class="math inline">\(p_n=\lambda/n\)</span>.</li>
+<li><strong>Reto.</strong> Discute por qué la varianza hipergeométrica tiende a la binomial cuando <span class="math inline">\(N\to\infty\)</span> con <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> fijo.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="12.15">
+<h2 data-number="12.15" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de las distribuciones hipergeométrica y de Poisson, sus momentos y resultados límite sigue el tratamiento estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -842,13 +1007,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./11-distribuciones-discretas-especiales.html" class="pagination-link" aria-label="Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./13-distribuciones-continuas-especiales.html" class="pagination-link" aria-label="Distribuciones continuas especiales I: uniforme, exponencial y normal">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

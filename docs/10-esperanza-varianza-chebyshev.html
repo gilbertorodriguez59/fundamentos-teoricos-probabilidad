@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Incertidumbre y modelos probabilísticos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>10&nbsp; Esperanza matemática, momentos, varianza y desigualdades probabilísticas – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-espacios-eventos.html" rel="next">
-<link href="./notacion.html" rel="prev">
+<link href="./11-distribuciones-discretas-especiales.html" rel="next">
+<link href="./09-variables-continuas-densidad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-incertidumbre-modelos.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-esperanza-varianza-chebyshev.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -197,7 +197,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
@@ -251,7 +251,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-esperanza-varianza-chebyshev.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-esperanza-varianza-chebyshev.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></span></a>
   </div>
 </li>
@@ -313,16 +313,48 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
-  <li><a href="#fenómenos-deterministas-y-aleatorios" id="toc-fenómenos-deterministas-y-aleatorios" class="nav-link" data-scroll-target="#fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</a></li>
-  <li><a href="#experimento-aleatorio" id="toc-experimento-aleatorio" class="nav-link" data-scroll-target="#experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</a></li>
-  <li><a href="#regularidad-estadística" id="toc-regularidad-estadística" class="nav-link" data-scroll-target="#regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</a></li>
-  <li><a href="#modelo-probabilístico" id="toc-modelo-probabilístico" class="nav-link" data-scroll-target="#modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</a></li>
-  <li><a href="#probabilidad-como-modelo-no-como-predicción-exacta" id="toc-probabilidad-como-modelo-no-como-predicción-exacta" class="nav-link" data-scroll-target="#probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</a></li>
-  <li><a href="#papel-de-la-probabilidad-en-ingeniería-y-ciencias" id="toc-papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="nav-link" data-scroll-target="#papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">1.9</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">10.1</span> Objetivos</a></li>
+  <li><a href="#esperanza-de-una-variable-aleatoria" id="toc-esperanza-de-una-variable-aleatoria" class="nav-link" data-scroll-target="#esperanza-de-una-variable-aleatoria"><span class="header-section-number">10.2</span> Esperanza de una variable aleatoria</a>
+  <ul class="collapse">
+  <li><a href="#caso-discreto" id="toc-caso-discreto" class="nav-link" data-scroll-target="#caso-discreto">Caso discreto</a></li>
+  <li><a href="#caso-absolutamente-continuo" id="toc-caso-absolutamente-continuo" class="nav-link" data-scroll-target="#caso-absolutamente-continuo">Caso absolutamente continuo</a></li>
+  </ul></li>
+  <li><a href="#esperanza-de-funciones-de-una-variable" id="toc-esperanza-de-funciones-de-una-variable" class="nav-link" data-scroll-target="#esperanza-de-funciones-de-una-variable"><span class="header-section-number">10.3</span> Esperanza de funciones de una variable</a></li>
+  <li><a href="#linealidad-de-la-esperanza" id="toc-linealidad-de-la-esperanza" class="nav-link" data-scroll-target="#linealidad-de-la-esperanza"><span class="header-section-number">10.4</span> Linealidad de la esperanza</a>
+  <ul class="collapse">
+  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
+  </ul></li>
+  <li><a href="#variables-indicadoras" id="toc-variables-indicadoras" class="nav-link" data-scroll-target="#variables-indicadoras"><span class="header-section-number">10.5</span> Variables indicadoras</a>
+  <ul class="collapse">
+  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
+  </ul></li>
+  <li><a href="#momentos" id="toc-momentos" class="nav-link" data-scroll-target="#momentos"><span class="header-section-number">10.6</span> Momentos</a></li>
+  <li><a href="#varianza" id="toc-varianza" class="nav-link" data-scroll-target="#varianza"><span class="header-section-number">10.7</span> Varianza</a></li>
+  <li><a href="#fórmula-alternativa-de-la-varianza" id="toc-fórmula-alternativa-de-la-varianza" class="nav-link" data-scroll-target="#fórmula-alternativa-de-la-varianza"><span class="header-section-number">10.8</span> Fórmula alternativa de la varianza</a>
+  <ul class="collapse">
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  </ul></li>
+  <li><a href="#caracterización-de-varianza-nula" id="toc-caracterización-de-varianza-nula" class="nav-link" data-scroll-target="#caracterización-de-varianza-nula"><span class="header-section-number">10.9</span> Caracterización de varianza nula</a></li>
+  <li><a href="#transformaciones-afines" id="toc-transformaciones-afines" class="nav-link" data-scroll-target="#transformaciones-afines"><span class="header-section-number">10.10</span> Transformaciones afines</a>
+  <ul class="collapse">
+  <li><a href="#demostración-3" id="toc-demostración-3" class="nav-link" data-scroll-target="#demostración-3">Demostración</a></li>
+  </ul></li>
+  <li><a href="#covarianza-y-varianza-de-una-suma" id="toc-covarianza-y-varianza-de-una-suma" class="nav-link" data-scroll-target="#covarianza-y-varianza-de-una-suma"><span class="header-section-number">10.11</span> Covarianza y varianza de una suma</a></li>
+  <li><a href="#desigualdad-de-markov" id="toc-desigualdad-de-markov" class="nav-link" data-scroll-target="#desigualdad-de-markov"><span class="header-section-number">10.12</span> Desigualdad de Markov</a>
+  <ul class="collapse">
+  <li><a href="#demostración-4" id="toc-demostración-4" class="nav-link" data-scroll-target="#demostración-4">Demostración</a></li>
+  </ul></li>
+  <li><a href="#desigualdad-de-chebyshev" id="toc-desigualdad-de-chebyshev" class="nav-link" data-scroll-target="#desigualdad-de-chebyshev"><span class="header-section-number">10.13</span> Desigualdad de Chebyshev</a>
+  <ul class="collapse">
+  <li><a href="#demostración-a-partir-de-markov" id="toc-demostración-a-partir-de-markov" class="nav-link" data-scroll-target="#demostración-a-partir-de-markov">Demostración a partir de Markov</a></li>
+  </ul></li>
+  <li><a href="#consecuencia-concentración-alrededor-de-la-media" id="toc-consecuencia-concentración-alrededor-de-la-media" class="nav-link" data-scroll-target="#consecuencia-concentración-alrededor-de-la-media"><span class="header-section-number">10.14</span> Consecuencia: concentración alrededor de la media</a></li>
+  <li><a href="#relación-entre-markov-y-chebyshev" id="toc-relación-entre-markov-y-chebyshev" class="nav-link" data-scroll-target="#relación-entre-markov-y-chebyshev"><span class="header-section-number">10.15</span> Relación entre Markov y Chebyshev</a></li>
+  <li><a href="#ejemplo-teórico-variable-de-bernoulli" id="toc-ejemplo-teórico-variable-de-bernoulli" class="nav-link" data-scroll-target="#ejemplo-teórico-variable-de-bernoulli"><span class="header-section-number">10.16</span> Ejemplo teórico: variable de Bernoulli</a></li>
+  <li><a href="#ejemplo-teórico-variable-uniforme-continua" id="toc-ejemplo-teórico-variable-uniforme-continua" class="nav-link" data-scroll-target="#ejemplo-teórico-variable-uniforme-continua"><span class="header-section-number">10.17</span> Ejemplo teórico: variable uniforme continua</a></li>
+  <li><a href="#existencia-de-momentos" id="toc-existencia-de-momentos" class="nav-link" data-scroll-target="#existencia-de-momentos"><span class="header-section-number">10.18</span> Existencia de momentos</a></li>
+  <li><a href="#momentos-y-forma-de-una-distribución" id="toc-momentos-y-forma-de-una-distribución" class="nav-link" data-scroll-target="#momentos-y-forma-de-una-distribución"><span class="header-section-number">10.19</span> Momentos y forma de una distribución</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">10.20</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -331,7 +363,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></h1>
 </div>
 
 
@@ -348,79 +380,395 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.</p>
+<section id="objetivos" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">10.1</span> Objetivos</h2>
+<p>Este capítulo formaliza la esperanza matemática y la varianza para variables aleatorias discretas y absolutamente continuas, desarrolla sus propiedades fundamentales y establece las desigualdades de Markov y Chebyshev como consecuencias directas de la estructura de integración probabilística.</p>
 </section>
-<section id="fenómenos-deterministas-y-aleatorios" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="fenómenos-deterministas-y-aleatorios"><span class="header-section-number">1.2</span> Fenómenos deterministas y aleatorios</h2>
-<p>Un fenómeno se denomina <strong>determinista</strong> cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno <strong>aleatorio</strong> puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.</p>
-<p>La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.</p>
-</section>
-<section id="experimento-aleatorio" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="experimento-aleatorio"><span class="header-section-number">1.3</span> Experimento aleatorio</h2>
-<p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.</p>
-<p>Más adelante llamaremos <strong>espacio muestral</strong> a ese conjunto de resultados posibles.</p>
-</section>
-<section id="regularidad-estadística" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="regularidad-estadística"><span class="header-section-number">1.4</span> Regularidad estadística</h2>
-<p>Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.</p>
-<p>Si <span class="math inline">\(A\)</span> es un evento y después de <span class="math inline">\(n\)</span> repeticiones ocurre <span class="math inline">\(n_A\)</span> veces, definimos la frecuencia relativa</p>
+<section id="esperanza-de-una-variable-aleatoria" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="esperanza-de-una-variable-aleatoria"><span class="header-section-number">10.2</span> Esperanza de una variable aleatoria</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria definida sobre <span class="math inline">\((\Omega,\mathcal F,P)\)</span>. La esperanza de <span class="math inline">\(X\)</span>, cuando existe, se interpreta como la integral de <span class="math inline">\(X\)</span> respecto de la medida de probabilidad <span class="math inline">\(P\)</span>:</p>
 <p><span class="math display">\[
-f_n(A)=\frac{n_A}{n}.
+E[X]=\int_\Omega X(\omega)\,dP(\omega).
 \]</span></p>
-<p>El comportamiento de <span class="math inline">\(f_n(A)\)</span> cuando <span class="math inline">\(n\)</span> aumenta será estudiado posteriormente mediante resultados límite.</p>
-</section>
-<section id="modelo-probabilístico" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="modelo-probabilístico"><span class="header-section-number">1.5</span> Modelo probabilístico</h2>
-<p>Un modelo probabilístico elemental consta de dos componentes:</p>
-<ol type="1">
-<li>una descripción de los resultados posibles;</li>
-<li>una regla que asigna probabilidades a los eventos.</li>
-</ol>
-<p>En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna</p>
+<p>En los casos elementales estudiados hasta ahora, esta definición adopta formas concretas.</p>
+<section id="caso-discreto" class="level3">
+<h3 class="anchored" data-anchor-id="caso-discreto">Caso discreto</h3>
+<p>Si <span class="math inline">\(X\)</span> tiene soporte numerable <span class="math inline">\(\mathcal S_X\)</span>, entonces</p>
 <p><span class="math display">\[
-(\Omega,\mathcal{F},P),
+\boxed{E[X]=\sum_{x\in\mathcal S_X}x\,P(X=x)}.
 \]</span></p>
-<p>donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una colección adecuada de eventos y <span class="math inline">\(P\)</span> es una medida de probabilidad.</p>
-<p>En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer <span class="math inline">\(P\)</span>.</p>
-</section>
-<section id="probabilidad-como-modelo-no-como-predicción-exacta" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="probabilidad-como-modelo-no-como-predicción-exacta"><span class="header-section-number">1.6</span> Probabilidad como modelo, no como predicción exacta</h2>
-<p>Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.</p>
-<p>Por ejemplo, si una moneda ideal se modela con</p>
+<p>Esta suma debe converger absolutamente para que <span class="math inline">\(E[X]\)</span> exista como número real finito:</p>
 <p><span class="math display">\[
-P(\text{cara})=\frac12,
+\sum_x |x|P(X=x)&lt;\infty.
 \]</span></p>
-<p>esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.</p>
 </section>
-<section id="papel-de-la-probabilidad-en-ingeniería-y-ciencias" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="papel-de-la-probabilidad-en-ingeniería-y-ciencias"><span class="header-section-number">1.7</span> Papel de la probabilidad en ingeniería y ciencias</h2>
-<p>Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.</p>
-<p>La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.</p>
+<section id="caso-absolutamente-continuo" class="level3">
+<h3 class="anchored" data-anchor-id="caso-absolutamente-continuo">Caso absolutamente continuo</h3>
+<p>Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx},
+\]</span></p>
+<p>si</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty}|x|f_X(x)\,dx&lt;\infty.
+\]</span></p>
 </section>
-<section id="ideas-clave" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">1.8</span> Ideas clave</h2>
+</section>
+<section id="esperanza-de-funciones-de-una-variable" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="esperanza-de-funciones-de-una-variable"><span class="header-section-number">10.3</span> Esperanza de funciones de una variable</h2>
+<p>Sea <span class="math inline">\(g:\mathbb R\to\mathbb R\)</span> medible. Si <span class="math inline">\(g(X)\)</span> es integrable, entonces</p>
+<p><span class="math display">\[
+E[g(X)]=\int_\Omega g(X(\omega))\,dP(\omega).
+\]</span></p>
+<p>En el caso discreto,</p>
+<p><span class="math display">\[
+\boxed{E[g(X)]=\sum_x g(x)p_X(x)},
+\]</span></p>
+<p>y en el caso absolutamente continuo,</p>
+<p><span class="math display">\[
+\boxed{E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)\,dx}.
+\]</span></p>
+<p>Esta identidad evita construir explícitamente la distribución inducida de <span class="math inline">\(g(X)\)</span>.</p>
+</section>
+<section id="linealidad-de-la-esperanza" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="linealidad-de-la-esperanza"><span class="header-section-number">10.4</span> Linealidad de la esperanza</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son integrables y <span class="math inline">\(a,b\in\mathbb R\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{E[aX+bY]=aE[X]+bE[Y]}.
+\]</span></p>
+<section id="demostración" class="level3">
+<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
+<p>Por linealidad de la integral,</p>
+<p><span class="math display">\[
+E[aX+bY]
+=\int_\Omega(aX+bY)\,dP
+=a\int_\Omega X\,dP+b\int_\Omega Y\,dP.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+E[aX+bY]=aE[X]+bE[Y].
+\]</span></p>
+<p>La independencia no interviene en este resultado.</p>
+</section>
+</section>
+<section id="variables-indicadoras" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="variables-indicadoras"><span class="header-section-number">10.5</span> Variables indicadoras</h2>
+<p>Para un evento <span class="math inline">\(A\in\mathcal F\)</span>, definimos</p>
+<p><span class="math display">\[
+I_A(\omega)=
+\begin{cases}
+1,&amp;\omega\in A,\\
+0,&amp;\omega\notin A.
+\end{cases}
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+\boxed{E[I_A]=P(A)}.
+\]</span></p>
+<section id="demostración-1" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
+<p>Como <span class="math inline">\(I_A\)</span> sólo toma los valores 0 y 1,</p>
+<p><span class="math display">\[
+E[I_A]
+=0\,P(A^c)+1\,P(A)
+=P(A).
+\]</span></p>
+<p>Esta identidad permite convertir problemas de conteo en sumas de esperanzas.</p>
+<p>Si</p>
+<p><span class="math display">\[
+N=\sum_{i=1}^n I_{A_i},
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+E[N]=\sum_{i=1}^nP(A_i),
+\]</span></p>
+<p>sin requerir independencia entre los eventos <span class="math inline">\(A_i\)</span>.</p>
+</section>
+</section>
+<section id="momentos" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="momentos"><span class="header-section-number">10.6</span> Momentos</h2>
+<p>El momento ordinario de orden <span class="math inline">\(r\)</span> se define por</p>
+<p><span class="math display">\[
+\mu_r'=E[X^r],
+\]</span></p>
+<p>si existe.</p>
+<p>El momento central de orden <span class="math inline">\(r\)</span> se define por</p>
+<p><span class="math display">\[
+\mu_r=E[(X-\mu)^r],
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\mu=E[X].
+\]</span></p>
+<p>El segundo momento central es especialmente importante.</p>
+</section>
+<section id="varianza" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="varianza"><span class="header-section-number">10.7</span> Varianza</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, la varianza de <span class="math inline">\(X\)</span> es</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=E[(X-E[X])^2]}.
+\]</span></p>
+<p>Por construcción,</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)\ge0.
+\]</span></p>
+<p>La desviación estándar se define por</p>
+<p><span class="math display">\[
+\sigma_X=\sqrt{\operatorname{Var}(X)}.
+\]</span></p>
+</section>
+<section id="fórmula-alternativa-de-la-varianza" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="fórmula-alternativa-de-la-varianza"><span class="header-section-number">10.8</span> Fórmula alternativa de la varianza</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=E[X^2]-E[X]^2}.
+\]</span></p>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Sea <span class="math inline">\(\mu=E[X]\)</span>. Entonces</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X)
+&amp;=E[(X-\mu)^2]\\
+&amp;=E[X^2-2\mu X+\mu^2]\\
+&amp;=E[X^2]-2\mu E[X]+\mu^2\\
+&amp;=E[X^2]-2\mu^2+\mu^2\\
+&amp;=E[X^2]-\mu^2.
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="caracterización-de-varianza-nula" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="caracterización-de-varianza-nula"><span class="header-section-number">10.9</span> Caracterización de varianza nula</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, entonces</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=0
+\]</span></p>
+<p>si y sólo si</p>
+<p><span class="math display">\[
+P(X=E[X])=1.
+\]</span></p>
+<p>Es decir, una variable tiene varianza cero exactamente cuando es constante casi seguramente.</p>
+</section>
+<section id="transformaciones-afines" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="transformaciones-afines"><span class="header-section-number">10.10</span> Transformaciones afines</h2>
+<p>Sean <span class="math inline">\(a,b\in\mathbb R\)</span>. Entonces</p>
+<p><span class="math display">\[
+E[aX+b]=aE[X]+b,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)}.
+\]</span></p>
+<section id="demostración-3" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-3">Demostración</h3>
+<p>Sea <span class="math inline">\(\mu=E[X]\)</span>. Entonces</p>
+<p><span class="math display">\[
+E[aX+b]=a\mu+b.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(aX+b)
+&amp;=E[(aX+b-(a\mu+b))^2]\\
+&amp;=E[a^2(X-\mu)^2]\\
+&amp;=a^2\operatorname{Var}(X).
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="covarianza-y-varianza-de-una-suma" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="covarianza-y-varianza-de-una-suma"><span class="header-section-number">10.11</span> Covarianza y varianza de una suma</h2>
+<p>Aunque el estudio detallado de variables conjuntas se realizará más adelante, conviene anticipar una identidad fundamental.</p>
+<p>La covarianza se define por</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+\]</span></p>
+<p>Siempre que existan los segundos momentos,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y)
+}.
+\]</span></p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0,
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y).
+\]</span></p>
+<p>La implicación recíproca no es válida en general: covarianza cero no implica independencia.</p>
+</section>
+<section id="desigualdad-de-markov" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="desigualdad-de-markov"><span class="header-section-number">10.12</span> Desigualdad de Markov</h2>
+<p>Sea <span class="math inline">\(X\ge0\)</span> casi seguramente y sea <span class="math inline">\(a&gt;0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\boxed{P(X\ge a)\le\frac{E[X]}{a}}.
+\]</span></p>
+<section id="demostración-4" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-4">Demostración</h3>
+<p>La desigualdad puntual</p>
+<p><span class="math display">\[
+X\ge aI_{\{X\ge a\}}
+\]</span></p>
+<p>implica, por monotonía de la esperanza,</p>
+<p><span class="math display">\[
+E[X]\ge aE[I_{\{X\ge a\}}].
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+E[I_{\{X\ge a\}}]=P(X\ge a),
+\]</span></p>
+<p>se obtiene</p>
+<p><span class="math display">\[
+E[X]\ge aP(X\ge a),
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+P(X\ge a)\le\frac{E[X]}{a}.
+\]</span></p>
+</section>
+</section>
+<section id="desigualdad-de-chebyshev" class="level2" data-number="10.13">
+<h2 data-number="10.13" class="anchored" data-anchor-id="desigualdad-de-chebyshev"><span class="header-section-number">10.13</span> Desigualdad de Chebyshev</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria con media finita <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>. Para todo <span class="math inline">\(t&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\boxed{P(|X-\mu|\ge t)\le\frac{\sigma^2}{t^2}}.
+\]</span></p>
+<p>Tomando</p>
+<p><span class="math display">\[
+t=k\sigma,
+\]</span></p>
+<p>con <span class="math inline">\(k&gt;0\)</span>, resulta</p>
+<p><span class="math display">\[
+\boxed{P(|X-\mu|\ge k\sigma)\le\frac1{k^2}}.
+\]</span></p>
+<p>Equivalentemente,</p>
+<p><span class="math display">\[
+\boxed{P(|X-\mu|&lt;k\sigma)\ge1-\frac1{k^2}}.
+\]</span></p>
+<section id="demostración-a-partir-de-markov" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-a-partir-de-markov">Demostración a partir de Markov</h3>
+<p>La variable</p>
+<p><span class="math display">\[
+Y=(X-\mu)^2
+\]</span></p>
+<p>es no negativa. Aplicando Markov con umbral <span class="math inline">\(t^2\)</span>,</p>
+<p><span class="math display">\[
+P((X-\mu)^2\ge t^2)
+\le
+\frac{E[(X-\mu)^2]}{t^2}.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\{(X-\mu)^2\ge t^2\}=\{|X-\mu|\ge t\}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+E[(X-\mu)^2]=\sigma^2,
+\]</span></p>
+<p>se obtiene el resultado.</p>
+</section>
+</section>
+<section id="consecuencia-concentración-alrededor-de-la-media" class="level2" data-number="10.14">
+<h2 data-number="10.14" class="anchored" data-anchor-id="consecuencia-concentración-alrededor-de-la-media"><span class="header-section-number">10.14</span> Consecuencia: concentración alrededor de la media</h2>
+<p>Chebyshev muestra que cualquier distribución con varianza finita debe concentrar una proporción mínima de su masa alrededor de la media.</p>
+<p>Para <span class="math inline">\(k=2\)</span>,</p>
+<p><span class="math display">\[
+P(|X-\mu|&lt;2\sigma)\ge\frac34.
+\]</span></p>
+<p>Para <span class="math inline">\(k=3\)</span>,</p>
+<p><span class="math display">\[
+P(|X-\mu|&lt;3\sigma)\ge\frac89.
+\]</span></p>
+<p>No se supone normalidad, simetría ni unimodalidad.</p>
+</section>
+<section id="relación-entre-markov-y-chebyshev" class="level2" data-number="10.15">
+<h2 data-number="10.15" class="anchored" data-anchor-id="relación-entre-markov-y-chebyshev"><span class="header-section-number">10.15</span> Relación entre Markov y Chebyshev</h2>
+<p>Markov requiere:</p>
 <ul>
-<li>Aleatoriedad no significa ausencia de leyes matemáticas.</li>
-<li>Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.</li>
-<li>La probabilidad se construye sobre eventos asociados a un espacio muestral.</li>
-<li>El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.</li>
+<li>no negatividad;</li>
+<li>existencia de <span class="math inline">\(E[X]\)</span>.</li>
 </ul>
+<p>Chebyshev se obtiene aplicando Markov a <span class="math inline">\((X-\mu)^2\)</span> y requiere:</p>
+<ul>
+<li>existencia de <span class="math inline">\(E[X]\)</span>;</li>
+<li>existencia de <span class="math inline">\(E[X^2]\)</span>.</li>
+</ul>
+<p>En este sentido, Chebyshev es una desigualdad de segundo momento.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">1.9</span> Ejercicios</h2>
-<ol type="1">
-<li>Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.</li>
-<li>Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.</li>
-<li>Describe los resultados posibles de lanzar dos monedas.</li>
-<li>¿Por qué <span class="math inline">\(P(A)=0.7\)</span> no significa que el evento <span class="math inline">\(A\)</span> ocurrirá siete veces en cada bloque de diez repeticiones?</li>
-<li>Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.</li>
-</ol>
+<section id="ejemplo-teórico-variable-de-bernoulli" class="level2" data-number="10.16">
+<h2 data-number="10.16" class="anchored" data-anchor-id="ejemplo-teórico-variable-de-bernoulli"><span class="header-section-number">10.16</span> Ejemplo teórico: variable de Bernoulli</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable Bernoulli con</p>
+<p><span class="math display">\[
+P(X=1)=p,
+\qquad
+P(X=0)=1-p.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+E[X]=p,
+\]</span></p>
+<p><span class="math display">\[
+E[X^2]=p,
+\]</span></p>
+<p>porque <span class="math inline">\(X^2=X\)</span>. Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=p(1-p)}.
+\]</span></p>
+<p>Este resultado será fundamental al estudiar distribuciones binomiales.</p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">1.10</span> Referencias del capítulo</h2>
-<p>La organización conceptual se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="ejemplo-teórico-variable-uniforme-continua" class="level2" data-number="10.17">
+<h2 data-number="10.17" class="anchored" data-anchor-id="ejemplo-teórico-variable-uniforme-continua"><span class="header-section-number">10.17</span> Ejemplo teórico: variable uniforme continua</h2>
+<p>Sea <span class="math inline">\(X\)</span> uniforme en <span class="math inline">\([a,b]\)</span> con densidad</p>
+<p><span class="math display">\[
+f_X(x)=\frac1{b-a},\qquad a\le x\le b.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+E[X]
+=\frac1{b-a}\int_a^b x\,dx
+=\frac{a+b}{2}.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+E[X^2]
+=\frac1{b-a}\int_a^b x^2\,dx
+=\frac{a^2+ab+b^2}{3}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=\frac{(b-a)^2}{12}}.
+\]</span></p>
+</section>
+<section id="existencia-de-momentos" class="level2" data-number="10.18">
+<h2 data-number="10.18" class="anchored" data-anchor-id="existencia-de-momentos"><span class="header-section-number">10.18</span> Existencia de momentos</h2>
+<p>No toda variable aleatoria posee esperanza o varianza finitas.</p>
+<p>Puede ocurrir que</p>
+<p><span class="math display">\[
+E[|X|]=\infty,
+\]</span></p>
+<p>por lo que <span class="math inline">\(E[X]\)</span> no existe como número real finito.</p>
+<p>Incluso puede existir <span class="math inline">\(E[X]\)</span> pero no <span class="math inline">\(E[X^2]\)</span>. En ese caso la media existe, pero la varianza es infinita o no está definida como cantidad finita.</p>
+<p>Por ello, antes de utilizar fórmulas de momentos es necesario verificar su existencia.</p>
+</section>
+<section id="momentos-y-forma-de-una-distribución" class="level2" data-number="10.19">
+<h2 data-number="10.19" class="anchored" data-anchor-id="momentos-y-forma-de-una-distribución"><span class="header-section-number">10.19</span> Momentos y forma de una distribución</h2>
+<p>Los primeros momentos tienen interpretaciones habituales:</p>
+<ul>
+<li>primer momento: centro;</li>
+<li>segundo momento central: dispersión;</li>
+<li>tercer momento central normalizado: asimetría;</li>
+<li>cuarto momento central normalizado: comportamiento de colas y apuntamiento.</li>
+</ul>
+<p>El estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.</p>
+</section>
+<section id="referencias-del-capítulo" class="level2" data-number="10.20">
+<h2 data-number="10.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">10.20</span> Referencias del capítulo</h2>
+<p>El tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, con apoyo computacional complementario basado en <span class="citation" data-cites="kerns2010">Kerns (<a href="references.html#ref-kerns2010" role="doc-biblioref">2010</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -429,6 +777,9 @@ Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Scie
 </div>
 <div id="ref-johnson2018" class="csl-entry" role="listitem">
 Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
+</div>
+<div id="ref-kerns2010" class="csl-entry" role="listitem">
+Kerns, G. Jay. 2010. <em>Introduction to Probability and Statistics Using R</em>. 1.ª ed.
 </div>
 <div id="ref-montgomery2018" class="csl-entry" role="listitem">
 Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
@@ -842,13 +1193,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notación general</span>
+      <a href="./09-variables-continuas-densidad.html" class="pagination-link" aria-label="Variables aleatorias continuas y función de densidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-distribuciones-discretas-especiales.html" class="pagination-link" aria-label="Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
